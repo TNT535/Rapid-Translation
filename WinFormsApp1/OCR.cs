@@ -7,7 +7,8 @@ using System.Diagnostics;
 using System.Reflection;
 using Tesseract;
 using System.Drawing;
-
+using OpenCvSharp;
+using OpenCvSharp.Extensions;
 
 namespace WinFormsApp1
 
@@ -25,10 +26,18 @@ namespace WinFormsApp1
             //        bmp.SetPixel(x, y, inv);
             //    }
             //}
+
+
+            var imageMat = OpenCvSharp.Extensions.BitmapConverter.ToMat(bmp);
+            var dst = new Mat();
+            OpenCvSharp.Cv2.Erode(src: imageMat, dst: dst, new Mat());
+            bmp = dst.ToBitmap();
+
+
             string output = "";
 
             Pix img = PixConverter.ToPix(bmp);
-            var testImagePath = "G:/1000-bai-tap/IT008/OCR/image.png";
+            //var testImagePath = "G:/1000-bai-tap/IT008/OCR/image.png";
             //string sCurrentDirectory = AppDomain.CurrentDomain.BaseDirectory;
             //Console.WriteLine(sCurrentDirectory);
             //var appPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
@@ -37,7 +46,7 @@ namespace WinFormsApp1
             {
                 using (var engine = new TesseractEngine(@"./tessdata", "eng", EngineMode.Default))
                 {
-                    using (var imgg = Pix.LoadFromFile(testImagePath))
+                    //using (var imgg = Pix.LoadFromFile(testImagePath))
                     {
                         using (var page = engine.Process(img))
                         {
