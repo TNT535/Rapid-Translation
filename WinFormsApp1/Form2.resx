@@ -57,25 +57,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="textBox1.Text" xml:space="preserve">
-    <value>Unexpected Error: Exception has been thrown by the target of an invocation.
-Details: 
-System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation.
- ---&gt; System.DllNotFoundException: Failed to find library "leptonica-1.80.0.dll" for platform x64.
-   at InteropDotNet.LibraryLoader.LoadLibrary(String fileName, String platformName)
-   at InteropRuntimeImplementer.LeptonicaApiSignaturesInstance.LeptonicaApiSignaturesImplementation..ctor(LibraryLoader loader)
-   --- End of inner exception stack trace ---
-   at System.RuntimeMethodHandle.InvokeMethod(Object target, Span`1&amp; arguments, Signature sig, Boolean constructor, Boolean wrapExceptions)
-   at System.Reflection.RuntimeConstructorInfo.Invoke(BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
-   at System.RuntimeType.CreateInstanceImpl(BindingFlags bindingAttr, Binder binder, Object[] args, CultureInfo culture)
-   at System.Activator.CreateInstance(Type type, BindingFlags bindingAttr, Binder binder, Object[] args, CultureInfo culture, Object[] activationAttributes)
-   at System.Activator.CreateInstance(Type type, Object[] args)
-   at InteropDotNet.InteropRuntimeImplementer.CreateInstance[T]()
-   at Tesseract.Interop.LeptonicaApi.Initialize()
-   at Tesseract.Interop.TessApi.Initialize()
-   at Tesseract.Interop.TessApi.get_Native()
-   at Tesseract.TesseractEngine..ctor(String datapath, String language, EngineMode engineMode, IEnumerable`1 configFiles, IDictionary`2 initialOptions, Boolean setOnlyNonDebugVariables)
-   at Tesseract.TesseractEngine..ctor(String datapath, String language, EngineMode engineMode)
-   at WinFormsApp1.OCR.ImageToText(Bitmap bmp)</value>
-  </data>
 </root>
