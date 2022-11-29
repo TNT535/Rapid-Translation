@@ -6,27 +6,13 @@
         xmlns:local="clr-namespace:RapidTranslationWPF"
         xmlns:wv2="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
         mc:Ignorable="d"
-        Title="MainWindow" Height="1024" Width="1440">
+        Title="MainWindow" Height="700" Width="1200">
     <Grid>
         <DockPanel>
             <!--<TextBlock DockPanel.Dock="Top" Text="Le Van Tri" HorizontalAlignment="Right">
 
             </TextBlock>-->
-            <Grid DockPanel.Dock="Top" HorizontalAlignment="Right" Margin="0 5 5 5">
-                <Border BorderBrush="#0F9D58" BorderThickness="1" CornerRadius="10" Padding="5">
-                    <DockPanel HorizontalAlignment="Right">
-                        <Image x:Name="Avatar"  DockPanel.Dock="Left" Source="/Resources/avatar.png" Width="50" Height="50" ></Image>
-                        <TextBlock DockPanel.Dock="Top" Text="TRINEWTON">
-
-                        </TextBlock>
-                        <ProgressBar DockPanel.Dock="Bottom" Width="120" Height="10" Minimum="0" Maximum="100" Value="75" Foreground="#FFF4B400" Background="#D9D9D9">
-
-                        </ProgressBar>
-                    </DockPanel>
-
-                </Border>
-            </Grid>
-            <StackPanel DockPanel.Dock="Left" Margin="0 0 46 0">
+            <StackPanel DockPanel.Dock="Left" Margin="0 10 46 0">
                 <StackPanel>
                     <Canvas x:Name="HEADERLOGO" Height="60" Width="100">
                         <Path StrokeThickness="3" StrokeStartLineCap="Round" StrokeEndLineCap="Round" Stroke="#0F9D58" Data="M14.6563 16.465C13.5913 27.0862 11.8626 37.4062 9.50395 47.8481C8.73059 51.2718 7.96619 54.7004 7.01661 58.0836C6.64656 59.402 6.75996 61.1998 5.55085 61.9325C4.75202 62.4165 5.05512 60.1695 5.06227 59.2679C5.08489 56.4142 5.31423 53.5611 5.63969 50.7242C7.25861 36.6126 10.1686 19.4163 19.8086 7.96362C25.0143 1.77913 32.8671 3.10179 32.7339 11.7279C32.6305 18.4249 28.7997 24.5842 23.2731 28.5614C22.3549 29.2223 12.7614 32.7801 13.4126 33.1293C25.1144 39.404 37.5098 44.5577 49.2125 50.8934C50.2222 51.44 58.7386 55.9413 60.7609 58.0836C62.1214 59.5248 59.4284 59.271 59.4284 59.86"/>
@@ -105,20 +91,34 @@
 
                 </StackPanel>
             </StackPanel>
-            <StackPanel DockPanel.Dock="Bottom">
-                <Grid Width="1055" Height="300" Background="#F5F5F5">
-                    <Image Source="/Resources/OCRoutput.png">
+            <Grid DockPanel.Dock="Top" HorizontalAlignment="Right" Margin="0 5 5 5">
+                <Border BorderBrush="#0F9D58" BorderThickness="1" CornerRadius="10" Padding="5">
+                    <DockPanel HorizontalAlignment="Right">
+                        <Image x:Name="Avatar"  DockPanel.Dock="Left" Source="/Resources/avatar.png" Width="30" Height="30" ></Image>
+                        <TextBlock DockPanel.Dock="Top" Text="TRINEWTON">
+
+                        </TextBlock>
+                        <ProgressBar DockPanel.Dock="Bottom" Width="120" Height="10" Minimum="0" Maximum="100" Value="75" Foreground="#FFF4B400" Background="#D9D9D9">
+
+                        </ProgressBar>
+                    </DockPanel>
+
+                </Border>
+            </Grid>
+            <DockPanel DockPanel.Dock="Bottom">
+                <Grid DockPanel.Dock="Top" Margin="10 0 5 5" Height="300" Background="#F5F5F5">
+                    <Image x:Name="ScreenShot" Source="/Resources/OCRoutput.png">
 
                     </Image>
                 </Grid>
-                <Grid Margin="0 7 0 7" >
+                <Grid DockPanel.Dock="Top" Margin="0 5 0 5" >
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition></ColumnDefinition>
                         <ColumnDefinition></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <Border Grid.Column="0" Width="150" Height="48" BorderBrush="#0F9D58" BorderThickness="1" CornerRadius="25" >
-                        <Button BorderBrush="Transparent" Padding="0" Grid.Column="0" Background="#FFFFFF">
-                            <TextBlock Margin="0" Padding="0" Text="Re-cap" FontSize="24" TextWrapping="Wrap">
+                        <Button x:Name="recap" BorderBrush="Transparent" Padding="0" Background="#FFFFFF" Height="46" VerticalAlignment="Top" Click="recap_Click">
+                            <TextBlock Text="Re-cap" FontSize="24" TextWrapping="Wrap">
 
                             </TextBlock>
                             <Button.Resources>
@@ -129,8 +129,8 @@
                         </Button>
                     </Border>
                     <Border Grid.Column="1" Width="150" Height="48" BorderBrush="#0F9D58" BorderThickness="1" CornerRadius="25" >
-                        <Button BorderBrush="Transparent" Padding="0" Grid.Column="1" Background="#0F9D58">
-                            <TextBlock Margin="0" Padding="0" Text="Done" FontSize="24" TextWrapping="Wrap">
+                        <Button x:Name="done" BorderBrush="Transparent" Padding="0" Background="#0F9D58">
+                            <TextBlock Text="Done" FontSize="24" TextWrapping="Wrap">
 
                             </TextBlock>
                             <Button.Resources>
@@ -141,11 +141,11 @@
                         </Button>
                     </Border>
                 </Grid>
-                <Grid Width="1055" Height="479" Background="#F0F0F0">
-                    <WrapPanel Margin="25 10 25 5">
-                        <Border Margin="8" BorderBrush="#0F9D58" BorderThickness="1" CornerRadius="20" >
-                            <Button BorderBrush="Transparent" Padding="12 4 12 4" Grid.Column="0" Background="#D9D9D9">
-                                <TextBlock Margin="0" Padding="0" Text="We're" FontSize="24" TextWrapping="Wrap">
+                <Grid DockPanel.Dock="Bottom" Background="#F0F0F0" Margin="10 5 5 5" >
+                    <WrapPanel x:Name="areaResult" Margin="25 10 25 5">
+                        <Border x:Name="textButton" Margin="8" BorderBrush="#0F9D58" BorderThickness="1" CornerRadius="20" >
+                            <Button BorderBrush="Transparent" Margin="-1" Padding="12 4 12 4" Grid.Column="0" Background="#D9D9D9" Click="Button_Click">
+                                <TextBlock x:Name="firstText" Margin="0" Padding="0" Text="We're" FontSize="24" TextWrapping="Wrap">
 
                                 </TextBlock>
                                 <Button.Resources>
@@ -156,7 +156,7 @@
                             </Button>
                         </Border>
                         <Border Margin="8" BorderBrush="#0F9D58" BorderThickness="1" CornerRadius="20" >
-                            <Button BorderBrush="Transparent" Padding="12 4 12 4" Grid.Column="0" Background="#D9D9D9">
+                            <Button BorderBrush="Transparent" Margin="-1" Padding="12 4 12 4" Grid.Column="0" Background="#D9D9D9">
                                 <TextBlock Margin="0" Padding="0" Text="fostering" FontSize="24" TextWrapping="Wrap">
 
                                 </TextBlock>
@@ -168,7 +168,7 @@
                             </Button>
                         </Border>
                         <Border Margin="8" BorderBrush="#0F9D58" BorderThickness="1" CornerRadius="20" >
-                            <Button BorderBrush="Transparent" Padding="12 4 12 4" Grid.Column="0" Background="#D9D9D9">
+                            <Button BorderBrush="Transparent" Margin="-1" Padding="12 4 12 4" Grid.Column="0" Background="#D9D9D9">
                                 <TextBlock Margin="0" Padding="0" Text="a" FontSize="24" TextWrapping="Wrap">
 
                                 </TextBlock>
@@ -180,7 +180,7 @@
                             </Button>
                         </Border>
                         <Border Margin="8" BorderBrush="#0F9D58" BorderThickness="1" CornerRadius="20" >
-                            <Button BorderBrush="Transparent" Padding="12 4 12 4" Grid.Column="0" Background="#D9D9D9">
+                            <Button BorderBrush="Transparent" Margin="-1" Padding="12 4 12 4" Grid.Column="0" Background="#D9D9D9">
                                 <TextBlock Margin="0" Padding="0" Text="collaborative" FontSize="24" TextWrapping="Wrap">
 
                                 </TextBlock>
@@ -192,7 +192,7 @@
                             </Button>
                         </Border>
                         <Border Margin="8" BorderBrush="#0F9D58" BorderThickness="1" CornerRadius="20" >
-                            <Button BorderBrush="Transparent" Padding="12 4 12 4" Grid.Column="0" Background="#D9D9D9">
+                            <Button BorderBrush="Transparent" Margin="-1" Padding="12 4 12 4" Grid.Column="0" Background="#D9D9D9">
                                 <TextBlock Margin="0" Padding="0" Text="collaborative" FontSize="24" TextWrapping="Wrap">
 
                                 </TextBlock>
@@ -204,7 +204,7 @@
                             </Button>
                         </Border>
                         <Border Margin="8" BorderBrush="#0F9D58" BorderThickness="1" CornerRadius="20" >
-                            <Button BorderBrush="Transparent" Padding="12 4 12 4" Grid.Column="0" Background="#D9D9D9">
+                            <Button BorderBrush="Transparent" Margin="-1" Padding="12 4 12 4" Grid.Column="0" Background="#D9D9D9">
                                 <TextBlock Margin="0" Padding="0" Text="collaborative" FontSize="24" TextWrapping="Wrap">
 
                                 </TextBlock>
@@ -241,9 +241,10 @@
                         </Border>
 
                     </WrapPanel>
+                    
                 </Grid>
 
-            </StackPanel>
+            </DockPanel>
         </DockPanel>
     </Grid>
 </Window>

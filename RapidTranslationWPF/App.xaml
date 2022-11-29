@@ -4,6 +4,30 @@
              xmlns:local="clr-namespace:RapidTranslationWPF"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Style TargetType="Border" x:Key="roundedBorderButton">
+            <Setter Property="Margin" Value="8"></Setter>
+            <Setter Property="BorderBrush" Value="#0F9D58"></Setter>
+            <Setter Property="BorderThickness" Value="1"></Setter>
+            <Setter Property="CornerRadius" Value="20"></Setter>
+        </Style>
+        <Style TargetType="Button" x:Key="wordButton" >
+            <Style.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="20"></Setter>
+                </Style>
+                <Style TargetType="TextBlock">
+                    <Setter Property="Margin" Value="0"></Setter>
+                    <Setter Property="Padding" Value="0"></Setter>
+                    <Setter Property="Text" Value="{Binding}"></Setter>
+                    <Setter Property="FontSize" Value="24"></Setter>
+                    <Setter Property="TextWrapping" Value="Wrap"></Setter>
+                </Style>
+            </Style.Resources>
+            <Setter Property="BorderBrush" Value="Transparent"></Setter>            
+            <Setter Property="Margin" Value="-1"></Setter>            
+            <Setter Property="Padding" Value="12 4 12 4"></Setter>
+            <Setter Property="Background" Value="#0F9D58"></Setter>
+        </Style>
+        
     </Application.Resources>
 </Application>

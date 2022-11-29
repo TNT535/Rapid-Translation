@@ -13,7 +13,7 @@ using OpenCvSharp.Extensions;
 namespace WinFormsApp1
 
 {
-    internal class OCR
+    public class OCR
     {
         public static string ImageToTextnonRelease(Bitmap bmp)
         {
