@@ -24,7 +24,7 @@
                 </StackPanel>
 
                 <StackPanel>
-                    <Border Width="274" Height="64" BorderBrush="#0F9D58" BorderThickness="1" CornerRadius="25" >
+                    <Border Width="274" Height="64" BorderBrush="#0F9D58" BorderThickness="1" CornerRadius="25" Margin="10 10 0 10">
                         <Button BorderBrush="Transparent" Background="#FFFFFF" HorizontalContentAlignment="Left" Padding="20 0 0 0">
                             <TextBlock Text="Home" FontSize="24" TextWrapping="Wrap">
 
@@ -37,7 +37,7 @@
                         </Button>
                     </Border>
 
-                    <Border Width="274" Height="64" BorderBrush="#0F9D58" BorderThickness="1" CornerRadius="25" >
+                    <Border Width="274" Height="64" BorderBrush="#0F9D58" BorderThickness="1" CornerRadius="25" Margin="10 10 0 10">
                         <Button BorderBrush="Transparent" Background="#FFFFFF" HorizontalContentAlignment="Left" Padding="20 0 0 0">
                             <TextBlock Text="Capture" FontSize="24" TextWrapping="Wrap">
 
@@ -50,7 +50,7 @@
                         </Button>
                     </Border>
 
-                    <Border Width="274" Height="64" BorderBrush="#0F9D58" BorderThickness="1" CornerRadius="25" >
+                    <Border Width="274" Height="64" BorderBrush="#0F9D58" BorderThickness="1" CornerRadius="25" Margin="10 10 0 10">
                         <Button BorderBrush="Transparent" Background="#FFFFFF" HorizontalContentAlignment="Left" Padding="20 0 0 0">
                             <TextBlock Text="Statistic" FontSize="24" TextWrapping="Wrap">
 
@@ -63,7 +63,7 @@
                         </Button>
                     </Border>
 
-                    <Border Width="274" Height="64" BorderBrush="#0F9D58" BorderThickness="1" CornerRadius="25" >
+                    <Border Width="274" Height="64" BorderBrush="#0F9D58" BorderThickness="1" CornerRadius="25" Margin="10 10 0 10">
                         <Button BorderBrush="Transparent" Background="#FFFFFF" HorizontalContentAlignment="Left" Padding="20 0 0 0">
                             <TextBlock Text="Vocabulary" FontSize="24" TextWrapping="Wrap">
 
@@ -76,7 +76,7 @@
                         </Button>
                     </Border>
 
-                    <Border Width="274" Height="64" BorderBrush="#0F9D58" BorderThickness="1" CornerRadius="25" >
+                    <Border Width="274" Height="64" BorderBrush="#0F9D58" BorderThickness="1" CornerRadius="25" Margin="10 10 0 10">
                         <Button BorderBrush="Transparent" Background="#FFFFFF" HorizontalContentAlignment="Left" Padding="20 0 0 0">
                             <TextBlock Text="Settings" FontSize="24" TextWrapping="Wrap">
 
@@ -118,8 +118,7 @@
                     </Grid.ColumnDefinitions>
                     <Border Grid.Column="0" Width="150" Height="48" BorderBrush="#0F9D58" BorderThickness="1" CornerRadius="25" >
                         <Button x:Name="recap" BorderBrush="Transparent" Padding="0" Background="#FFFFFF" Height="46" VerticalAlignment="Top" Click="recap_Click">
-                            <TextBlock Text="Re-cap" FontSize="24" TextWrapping="Wrap">
-
+                            <TextBlock Text="Re-cap" FontSize="18" TextWrapping="Wrap">
                             </TextBlock>
                             <Button.Resources>
                                 <Style TargetType="{x:Type Border}">
@@ -130,7 +129,7 @@
                     </Border>
                     <Border Grid.Column="1" Width="150" Height="48" BorderBrush="#0F9D58" BorderThickness="1" CornerRadius="25" >
                         <Button x:Name="done" BorderBrush="Transparent" Padding="0" Background="#0F9D58">
-                            <TextBlock Text="Done" FontSize="24" TextWrapping="Wrap">
+                            <TextBlock Text="Done" FontSize="18" TextWrapping="Wrap">
 
                             </TextBlock>
                             <Button.Resources>
