@@ -1,20 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Markup;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.Xml;
 
 
 //using WinFormsApp1;
@@ -39,8 +27,6 @@ namespace RapidTranslationWPF
         {
             InitializeComponent();
             //webView.Source = new Uri("https://translate.google.com/?sl=en&tl=vi");
-
-
         }
 
         private void recap_Click(object sender, RoutedEventArgs e)
@@ -98,7 +84,6 @@ namespace RapidTranslationWPF
                    IntPtr.Zero, Int32Rect.Empty,
                    System.Windows.Media.Imaging.BitmapSizeOptions.FromEmptyOptions());
             }
-
             return bs;
         }
 
@@ -107,7 +92,13 @@ namespace RapidTranslationWPF
             if (sender != null)
             {
                 Button btn = sender as Button;
-                btn.Background = Brushes.White;
+                if (btn.Background == Brushes.White)
+                {
+                    BrushConverter brushConverter = new BrushConverter();
+                    btn.Background = (Brush)brushConverter.ConvertFrom("#0F9D58");
+                }
+                else
+                    btn.Background = Brushes.White;
 
             }
         }
