@@ -9,11 +9,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="img\banner.png" />
     <None Remove="Resources\avatar.png" />
     <None Remove="Resources\OCRoutput.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="img\banner.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\avatar.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
