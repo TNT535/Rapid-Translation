@@ -122,5 +122,11 @@ namespace RapidTranslationWPF
             button.DataContext = word;
             return border;
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            VocabularyWindow vocabWindow = new VocabularyWindow();
+            this.Content = vocabWindow;
+        }
     }
 }

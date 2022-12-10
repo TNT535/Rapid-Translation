@@ -75,7 +75,7 @@
                     </Border>
 
                     <Border Width="250" Height="50" BorderBrush="#0F9D58" BorderThickness="1" CornerRadius="25" Margin="10 10 0 10">
-                        <Button BorderBrush="Transparent" Background="#FFFFFF" HorizontalContentAlignment="Left" Padding="20 0 0 0">
+                        <Button BorderBrush="Transparent" Background="#FFFFFF" HorizontalContentAlignment="Left" Padding="20 0 0 0" Click="Button_Click_1">
                             <TextBlock Text="Settings" FontSize="18" TextWrapping="Wrap" Foreground="#666666">
 
                             </TextBlock>
