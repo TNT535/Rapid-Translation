@@ -6,16 +6,16 @@
              xmlns:local="clr-namespace:RapidTranslationWPF.UserControlRT"
              mc:Ignorable="d" 
              d:DesignHeight="42" d:DesignWidth="162">
-        <Border BorderBrush="#0F9D58" BorderThickness="1" CornerRadius="10" Padding="5" HorizontalAlignment="Right" Width="162">
-            <DockPanel HorizontalAlignment="Right">
-                <Image x:Name="Avatar"  DockPanel.Dock="Left" Source="/Resources/avatar.png" Width="30" Height="30" ></Image>
-                <TextBlock DockPanel.Dock="Top" Text="TRINEWTON">
+    <Border BorderBrush="#0F9D58" BorderThickness="1" CornerRadius="10" Padding="5">
+        <DockPanel HorizontalAlignment="Right">
+            <Image x:Name="Avatar"  DockPanel.Dock="Left" Source="/Resources/avatar.png" Width="30" Height="30" ></Image>
+            <TextBlock DockPanel.Dock="Top" Text="TRINEWTON">
 
-                </TextBlock>
-                <ProgressBar DockPanel.Dock="Bottom" Width="120" Height="10" Minimum="0" Maximum="100" Value="75" Foreground="#FFF4B400" Background="#D9D9D9">
+            </TextBlock>
+            <ProgressBar DockPanel.Dock="Bottom" Width="120" Height="10" Minimum="0" Maximum="100" Value="75" Foreground="#FFF4B400" Background="#D9D9D9">
 
-                </ProgressBar>
-            </DockPanel>
+            </ProgressBar>
+        </DockPanel>
 
-        </Border>
+    </Border>
 </UserControl>
