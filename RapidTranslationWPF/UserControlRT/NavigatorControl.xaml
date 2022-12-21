@@ -1,0 +1,88 @@
+﻿<UserControl x:Class="RapidTranslationWPF.UserControlRT.NavigatorControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:RapidTranslationWPF.UserControlRT"
+             mc:Ignorable="d" 
+             d:DesignHeight="674.04" d:DesignWidth="274">
+
+    <StackPanel>
+        <StackPanel>
+            <Canvas x:Name="HEADERLOGO" Height="60" Width="100">
+                <Path StrokeThickness="3" StrokeStartLineCap="Round" StrokeEndLineCap="Round" Stroke="#0F9D58" Data="M14.6563 16.465C13.5913 27.0862 11.8626 37.4062 9.50395 47.8481C8.73059 51.2718 7.96619 54.7004 7.01661 58.0836C6.64656 59.402 6.75996 61.1998 5.55085 61.9325C4.75202 62.4165 5.05512 60.1695 5.06227 59.2679C5.08489 56.4142 5.31423 53.5611 5.63969 50.7242C7.25861 36.6126 10.1686 19.4163 19.8086 7.96362C25.0143 1.77913 32.8671 3.10179 32.7339 11.7279C32.6305 18.4249 28.7997 24.5842 23.2731 28.5614C22.3549 29.2223 12.7614 32.7801 13.4126 33.1293C25.1144 39.404 37.5098 44.5577 49.2125 50.8934C50.2222 51.44 58.7386 55.9413 60.7609 58.0836C62.1214 59.5248 59.4284 59.271 59.4284 59.86"/>
+                <Path StrokeThickness="3" StrokeStartLineCap="Round" StrokeEndLineCap="Round" Stroke="#0F9D58" Data="M72.2204 2C72.2204 18.1333 72.742 36.1921 69.8219 51.4855"/>
+                <Path StrokeThickness="3" StrokeStartLineCap="Round" StrokeEndLineCap="Round" Stroke="#0F9D58" Data="M55.4309 2.76129C71.9803 3.07029 88.4748 4.19465 105 5.04524"/>
+            </Canvas>
+            <TextBlock x:Name="IT008" Width="100" Height="48" Foreground="#0f9d58" FontSize="40">IT008</TextBlock>
+
+        </StackPanel>
+
+        <StackPanel>
+            <Border Width="250" Height="50" BorderBrush="#0F9D58" BorderThickness="1" CornerRadius="25" Margin="10 10 0 10">
+                <Button BorderBrush="Transparent" Background="#FFFFFF" HorizontalContentAlignment="Left" Padding="20 0 0 0">
+                    <TextBlock Text="Home" FontSize="18" TextWrapping="Wrap" Foreground="#666666">
+                    </TextBlock>
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="25"></Setter>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            </Border>
+
+            <Border Width="250" Height="50" BorderBrush="#0F9D58" BorderThickness="1" CornerRadius="25" Margin="10 10 0 10">
+                <Button BorderBrush="Transparent" Background="#FFFFFF" HorizontalContentAlignment="Left" Padding="20 0 0 0">
+                    <TextBlock Text="Capture" FontSize="18" TextWrapping="Wrap" Foreground="#666666">
+
+                    </TextBlock>
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="25"></Setter>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            </Border>
+
+            <Border Width="250" Height="50" BorderBrush="#0F9D58" BorderThickness="1" CornerRadius="25" Margin="10 10 0 10">
+                <Button BorderBrush="Transparent" Background="#FFFFFF" HorizontalContentAlignment="Left" Padding="20 0 0 0">
+                    <TextBlock Text="Statistic" FontSize="18" TextWrapping="Wrap" Foreground="#666666">
+
+                    </TextBlock>
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="25"></Setter>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            </Border>
+
+            <Border Width="250" Height="50" BorderBrush="#0F9D58" BorderThickness="1" CornerRadius="25" Margin="10 10 0 10">
+                <Button BorderBrush="Transparent" Background="#FFFFFF" HorizontalContentAlignment="Left" Padding="20 0 0 0">
+                    <TextBlock Text="Vocabulary" FontSize="18" TextWrapping="Wrap" Foreground="#666666">
+                    </TextBlock>
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="25"></Setter>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            </Border>
+
+            <Border Width="250" Height="50" BorderBrush="#0F9D58" BorderThickness="1" CornerRadius="25" Margin="10 10 0 10">
+                <Button BorderBrush="Transparent" Background="#FFFFFF" HorizontalContentAlignment="Left" Padding="20 0 0 0">
+                    <TextBlock Text="Settings" FontSize="18" TextWrapping="Wrap" Foreground="#666666">
+
+                    </TextBlock>
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="25"></Setter>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            </Border>
+
+        </StackPanel>
+    </StackPanel>
+
+</UserControl>

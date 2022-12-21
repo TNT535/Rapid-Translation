@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RapidTranslationWPF;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -35,6 +36,12 @@ namespace WelcomedotNET6
             //writer.Close();
             //writer.Dispose();
             //this.Close();
+
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            mainWindow.Focus();
+            this.Close();
+
         }
 
         private void textbox1_MouseEnter(object sender, MouseEventArgs e)
