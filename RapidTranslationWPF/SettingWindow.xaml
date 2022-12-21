@@ -102,7 +102,7 @@
            
             <DockPanel DockPanel.Dock="Bottom">
                 <StackPanel HorizontalAlignment="Left">
-                    <TextBox VerticalAlignment="Stretch" VerticalContentAlignment="Center" Padding="10" Margin="10 10 10 10">
+                    <TextBox x:Name="NameBox" VerticalAlignment="Stretch" VerticalContentAlignment="Center" Padding="10" Margin="10 10 10 10">
                         <TextBox.Text>Name: John </TextBox.Text>
                         <TextBox.Resources>
                             <Style TargetType="{x:Type Border}">
@@ -111,6 +111,10 @@
                                 <Setter Property="Width" Value="350"/>
                             </Style>
                         </TextBox.Resources>
+                        
+                        <TextBox.Background>
+                            <ImageBrush ImageSource="/Resources/BoxName.png" AlignmentX="Left" Stretch="None" />
+                        </TextBox.Background>
                     </TextBox>
 
                     <TextBox VerticalAlignment="Stretch" VerticalContentAlignment="Center" Padding="10" Margin="10 10 10 10">
