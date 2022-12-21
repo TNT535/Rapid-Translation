@@ -193,6 +193,8 @@ namespace RapidTranslationWPF
             VocabularyWindow vocabWindow = new VocabularyWindow();
             this.Content = vocabWindow;
 
+        }
+        
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             FormApplication.Exit();
