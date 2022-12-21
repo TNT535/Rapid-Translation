@@ -187,6 +187,12 @@ namespace RapidTranslationWPF
             return border;
         }
 
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            VocabularyWindow vocabWindow = new VocabularyWindow();
+            this.Content = vocabWindow;
+
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             FormApplication.Exit();
@@ -231,6 +237,7 @@ namespace RapidTranslationWPF
                 if (ithChild is T t) yield return t;
                 foreach (T childOfChild in FindVisualChilds<T>(ithChild)) yield return childOfChild;
             }
+
         }
     }
 }
