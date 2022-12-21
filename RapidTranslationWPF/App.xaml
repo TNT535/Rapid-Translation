@@ -2,8 +2,9 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:RapidTranslationWPF"
+ 
              StartupUri="WelcomeWindow.xaml">
-             <!--StartupUri="TestNavigatorControlWindow.xaml">-->
+             <!--StartupUri="TestNavigatorControlWindow.xaml">--> 
     <Application.Resources>
         <Style TargetType="Border" x:Key="roundedBorderButton">
             <Setter Property="Margin" Value="8"></Setter>
@@ -20,13 +21,16 @@
                     <Setter Property="Margin" Value="0"></Setter>
                     <Setter Property="Padding" Value="0"></Setter>
                     <Setter Property="Text" Value="{Binding}"></Setter>
-                    <Setter Property="FontSize" Value="24"></Setter>
-                    <Setter Property="TextWrapping" Value="Wrap"></Setter>
+                    <Setter Property="FontSize" Value="18"></Setter>
+                    <Setter Property="TextWrapping" Value="Wrap"></Setter> 
                 </Style>
             </Style.Resources>
+            
             <Setter Property="BorderBrush" Value="Transparent"></Setter>            
-            <Setter Property="Margin" Value="-1"></Setter>            
+            <Setter Property="Margin" Value="-1"></Setter>
             <Setter Property="Padding" Value="12 4 12 4"></Setter>
+            <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+            <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
             <Setter Property="Background" Value="#0F9D58"></Setter>
         </Style>
 

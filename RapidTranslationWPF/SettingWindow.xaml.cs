@@ -22,6 +22,6 @@ namespace RapidTranslationWPF
         public SettingWindow()
         {
             InitializeComponent();
-        }
+        }  
     }
 }
