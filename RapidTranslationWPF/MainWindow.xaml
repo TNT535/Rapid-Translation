@@ -128,7 +128,9 @@
                         </Button>
                     </Border>
                     <Border Grid.Column="1" Width="150" Height="48" BorderBrush="#0F9D58" BorderThickness="1" CornerRadius="25" >
+
                         <Button x:Name="done" BorderBrush="Transparent" Padding="0" Background="#0F9D58" Click="done_Click">
+
                             <TextBlock Text="Done" FontSize="18" TextWrapping="Wrap">
 
                             </TextBlock>
@@ -140,6 +142,7 @@
                         </Button>
                     </Border>
                 </Grid>
+                
                 <Grid x:Name="gridResultRegion" DockPanel.Dock="Bottom" Background="#F0F0F0" Margin="10 5 5 5" >
                     <ScrollViewer VerticalScrollBarVisibility="Auto">
                         <WrapPanel x:Name="areaResult" Margin="25 10 25 5">
@@ -194,6 +197,7 @@
                         </WrapPanel>
 
                     </ScrollViewer>
+
                 </Grid>
             </DockPanel>
         </DockPanel>

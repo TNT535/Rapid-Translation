@@ -37,6 +37,7 @@ namespace RapidTranslationWPF
             InitializeComponent();
             //webView.Source = new Uri("https://translate.google.com/?sl=en&tl=vi");
 
+
         }
 
 
