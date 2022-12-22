@@ -102,8 +102,10 @@
            
             <DockPanel DockPanel.Dock="Bottom">
                 <StackPanel HorizontalAlignment="Left">
-                    <TextBox x:Name="NameBox" VerticalAlignment="Stretch" VerticalContentAlignment="Center" Padding="10" Margin="10 10 10 10">
+                    <TextBox x:Name="NameBox" VerticalAlignment="Stretch" VerticalContentAlignment="Center" Padding="10" Margin="10 10 10 10" TextChanged="OnChangedNameBox" >
+                        <!--
                         <TextBox.Text>Name: John </TextBox.Text>
+                        -->
                         <TextBox.Resources>
                             <Style TargetType="{x:Type Border}">
                                 <Setter Property="CornerRadius" Value="25"/>
@@ -111,14 +113,15 @@
                                 <Setter Property="Width" Value="350"/>
                             </Style>
                         </TextBox.Resources>
-                        
                         <TextBox.Background>
                             <ImageBrush ImageSource="/Resources/BoxName.png" AlignmentX="Left" Stretch="None" />
                         </TextBox.Background>
                     </TextBox>
 
-                    <TextBox VerticalAlignment="Stretch" VerticalContentAlignment="Center" Padding="10" Margin="10 10 10 10">
+                    <TextBox x:Name="SurnameBox" VerticalAlignment="Stretch" VerticalContentAlignment="Center" Padding="10" Margin="10 10 10 10" TextChanged="OnChangedSurnameBox">
+                        <!--
                         <TextBox.Text>Surname: Smith</TextBox.Text>
+                        -->
                         <TextBox.Resources>
                             <Style TargetType="{x:Type Border}">
                                 <Setter Property="CornerRadius" Value="25"/>
@@ -126,10 +129,15 @@
                                 <Setter Property="Width" Value="350"/>
                             </Style>
                         </TextBox.Resources>
+                        <TextBox.Background>
+                            <ImageBrush ImageSource="/Resources/BoxSurname.png" AlignmentX="Left" Stretch="None" />
+                        </TextBox.Background>
                     </TextBox>
 
-                    <TextBox VerticalAlignment="Stretch" VerticalContentAlignment="Center" Padding="10" Margin="10 10 10 10">
+                    <TextBox x:Name="PatronymicBox" VerticalAlignment="Stretch" VerticalContentAlignment="Center" Padding="10" Margin="10 10 10 10" TextChanged="OnChangedPatronymicBox">
+                        <!--
                         <TextBox.Text>Patronymic: Smith</TextBox.Text>
+                        -->
                         <TextBox.Resources>
                             <Style TargetType="{x:Type Border}">
                                 <Setter Property="CornerRadius" Value="25"/>
@@ -137,6 +145,9 @@
                                 <Setter Property="Width" Value="350"/>
                             </Style>
                         </TextBox.Resources>
+                        <TextBox.Background>
+                            <ImageBrush ImageSource="/Resources/BoxPatronymic.png" AlignmentX="Left" Stretch="None" />
+                        </TextBox.Background>
                     </TextBox>
 
                     <DatePicker VerticalContentAlignment="Center" Padding="10" Margin="10 10 10 10">
