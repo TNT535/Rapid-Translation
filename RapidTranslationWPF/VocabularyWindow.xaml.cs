@@ -38,5 +38,35 @@ namespace RapidTranslationWPF
             }
 
         }
+
+        private void SpeakBtn2_Click(object sender, RoutedEventArgs e)
+        {
+            if (Word2.Text != "")
+            {
+                SpeechSynthesizer ss = new SpeechSynthesizer();
+
+                ss.Speak(Word2.Text);
+            }
+        }
+
+        private void SpeakBtn3_Click(object sender, RoutedEventArgs e)
+        {
+            if (Word3.Text != "")
+            {
+                SpeechSynthesizer ss = new SpeechSynthesizer();
+
+                ss.Speak(Word3.Text);
+            }
+        }
+
+        private void SpeakBtn4_Click(object sender, RoutedEventArgs e)
+        {
+            if (Word4.Text != "")
+            {
+                SpeechSynthesizer ss = new SpeechSynthesizer();
+
+                ss.Speak(Word4.Text);
+            }
+        }
     }
 }
