@@ -170,6 +170,7 @@
 
             <Polygon Points="0,0 32,20, 0,40" Fill="Green" Height="40" Width="32" RenderTransformOrigin="0.544,0.492" />
         </Button>
-        <TextBlock TextWrapping="Wrap" Text="Page 1" Margin="668,643,0,17" HorizontalAlignment="Left" FontSize="30" Width="99"/>
+        <TextBlock TextWrapping="Wrap" Text="Page 1" Margin="668,643,0,17" HorizontalAlignment="Left" FontSize="32
+                   " Width="99"/>
     </Grid>
 </Page>
