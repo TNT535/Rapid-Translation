@@ -36,11 +36,7 @@ namespace RapidTranslationWPF
         {
             InitializeComponent();
             //webView.Source = new Uri("https://translate.google.com/?sl=en&tl=vi");
-
-
         }
-
-
 
         public void CaptureScreen(Bitmap localImage = null)
         {
@@ -187,14 +183,20 @@ namespace RapidTranslationWPF
             return border;
         }
 
+        //private void Button_Click_1(object sender, RoutedEventArgs e)
+        //{
+        //    VocabularyWindow vocabWindow = new VocabularyWindow();
+        //    this.Content = vocabWindow;
+        //}
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void SettingClick(object sender, RoutedEventArgs e)
         {
-            VocabularyWindow vocabWindow = new VocabularyWindow();
-            this.Content = vocabWindow;
-
+            SettingWindow settingWindow = new SettingWindow();
+            settingWindow.Show();
+            settingWindow.Focus();
+            this.Close();
         }
-        
+
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             FormApplication.Exit();

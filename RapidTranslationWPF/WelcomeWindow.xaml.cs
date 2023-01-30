@@ -41,7 +41,6 @@ namespace WelcomedotNET6
             mainWindow.Show();
             mainWindow.Focus();
             this.Close();
-
         }
 
         private void textbox1_MouseEnter(object sender, MouseEventArgs e)

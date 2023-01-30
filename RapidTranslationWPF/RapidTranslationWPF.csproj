@@ -11,6 +11,8 @@
   <ItemGroup>
     <None Remove="img\banner.png" />
     <None Remove="Resources\avatar.png" />
+    <None Remove="Resources\BoxName.png" />
+    <None Remove="Resources\BoxSurname.png" />
     <None Remove="Resources\OCRoutput.png" />
   </ItemGroup>
 
@@ -19,6 +21,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\avatar.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\BoxName.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\BoxSurname.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
