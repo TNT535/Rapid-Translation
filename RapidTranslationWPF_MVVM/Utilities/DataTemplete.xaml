@@ -1,0 +1,26 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:views="clr-namespace:RapidTranslationWPF_MVVM.Views"
+                    xmlns:vm="clr-namespace:RapidTranslationWPF_MVVM.ViewModels">
+
+
+    <DataTemplate DataType="{x:Type vm:HomeViewModel}">
+        <views:HomeView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:CaptureViewModel}">
+        <views:CaptureView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:StatisticViewModel}">
+        <views:StatisticView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:VocabularyViewModel}">
+        <views:VocabularyView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:SettingsViewModel}">
+        <views:SettingsView/>
+    </DataTemplate>
+</ResourceDictionary>

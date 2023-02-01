@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="RapidTranslationWPF_MVVM.Views.StatisticView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:RapidTranslationWPF_MVVM.Views"
+             xmlns:vm="clr-namespace:RapidTranslationWPF_MVVM.ViewModels"
+             mc:Ignorable="d" 
+             d:DesignHeight="632" d:DesignWidth="895">
+
+    <UserControl.DataContext>
+        <vm:StatisticViewModel/>
+    </UserControl.DataContext>
+
+    <Grid>
+        <StackPanel>
+            <TextBlock Text="Statistic Windows have context:" />
+            <TextBox Text="{Binding StatisticString}" />
+        </StackPanel>
+
+    </Grid>
+</UserControl>
