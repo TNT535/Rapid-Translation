@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RapidTranslationWPF_MVVM.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -13,5 +14,13 @@ namespace RapidTranslationWPF_MVVM
     /// </summary>
     public partial class App : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+
+            MainWindow = new MainWindow();
+            MainWindow.Show();
+
+            base.OnStartup(e);
+        }
     }
 }
