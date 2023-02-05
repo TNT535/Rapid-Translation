@@ -54,7 +54,7 @@
                  Foreground="gray"
                  
                  
-                 FontSize="30" MouseEnter="textbox1_MouseEnter"
+                 FontSize="30" MouseEnter="textbox1_MouseLeftButtonUp"  
             >
 
 

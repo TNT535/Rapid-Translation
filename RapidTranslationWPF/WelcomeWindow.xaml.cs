@@ -21,10 +21,11 @@ namespace WelcomedotNET6
     public partial class WelcomeWindow : Window
     {
         string UserName;
-
+        int MouseFlag = 0;
         public WelcomeWindow()
         {
             InitializeComponent();
+            
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -44,11 +45,16 @@ namespace WelcomedotNET6
 
         }
 
-        private void textbox1_MouseEnter(object sender, MouseEventArgs e)
+        private void textbox1_MouseLeftButtonUp(object sender, MouseEventArgs e)
         {
-            textbox1.Text = "";
-            textbox1.Foreground = Brushes.Black;
+            if (MouseFlag == 0)
+            {
+                textbox1.Text = "";
+                textbox1.Foreground = Brushes.Black;
+                MouseFlag = 1;
+            }
         }
 
+       
     }
 }

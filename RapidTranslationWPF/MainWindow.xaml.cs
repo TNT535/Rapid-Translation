@@ -188,7 +188,7 @@ namespace RapidTranslationWPF
         }
 
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void Button_Click_Vocab(object sender, RoutedEventArgs e)
         {
             VocabularyWindow vocabWindow = new VocabularyWindow();
             this.Content = vocabWindow;

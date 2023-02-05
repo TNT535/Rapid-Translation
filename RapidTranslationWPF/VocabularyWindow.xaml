@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:RapidTranslationWPF"
+      xmlns:wv2="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
       mc:Ignorable="d" 
       
       Title="VocabularyWindow"   Height="700" Width="1200">
@@ -106,7 +107,11 @@
 
 
             <Grid DockPanel.Dock="Bottom" Background="#F0F0F0" Margin="10 5 5 5" Height="524" >
-                <Border BorderBrush="Black" BorderThickness="1" Margin="10,10,10,400" CornerRadius="25" Padding="10 10 0 10" Height="112" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="29*"/>
+                    <ColumnDefinition Width="850*"/>
+                </Grid.ColumnDefinitions>
+                <Border BorderBrush="Black" BorderThickness="1" Margin="10,11,10,401" CornerRadius="25" Padding="10 10 0 10" Height="112" Grid.ColumnSpan="2" >
 
                     <Button x:Name="SpeakBtn1" FontSize="14"  Margin="26,26,789,26"
 	                    Background="Transparent" BorderThickness="0" Padding="0 0 0 0" Click="SpeakBtn1_Click">
@@ -116,35 +121,35 @@
 
 
                 </Border>
-                <TextBlock x:Name="Word1" TextWrapping="Wrap" Text="Example words 1" FontSize="24" TextAlignment="Left" Margin="100,24,29,466"/>
-                <TextBlock x:Name="translation1" TextWrapping="Wrap" Text="Example words' translation 1" FontSize="18" TextAlignment="Left" Margin="100,67,29,423"/>
+                <TextBlock x:Name="Word1" TextWrapping="Wrap" Text="Example words 1" FontSize="24" TextAlignment="Left" Margin="71,24,29,466" Grid.Column="1"/>
+                <TextBlock x:Name="translation1" TextWrapping="Wrap" Text="Example words' translation 1" FontSize="18" TextAlignment="Left" Margin="71,67,29,423" Grid.Column="1"/>
 
-                <Border BorderBrush="Black" BorderThickness="1" Margin="10,134,10,273" CornerRadius="25" Padding="10 10 0 10" Height="114">
+                <Border BorderBrush="Black" BorderThickness="1" Margin="10,136,10,274" CornerRadius="25" Padding="10 10 0 10" Height="114" Grid.ColumnSpan="2">
                     <Button x:Name="SpeakBtn2" FontSize="14"  Margin="26,26,789,26"
 	                    Background="Transparent" BorderThickness="0" Padding="0 0 0 0" Click="SpeakBtn2_Click">
                         <Polygon Points="0,0 32,20, 0,40" Fill="Green" Height="40" Width="32" RenderTransformOrigin="0.544,0.492" />
                     </Button>
                 </Border>
 
-                <Border BorderBrush="Black" BorderThickness="1" Margin="10,258,10,148" CornerRadius="25" Padding="10 10 0 10" Height="114">
+                <Border BorderBrush="Black" BorderThickness="1" Margin="10,260,10,150" CornerRadius="25" Padding="10 10 0 10" Height="114" Grid.ColumnSpan="2">
                     <Button x:Name="SpeakBtn3" FontSize="14"  Margin="26,26,789,26"
 	                    Background="Transparent" BorderThickness="0" Padding="0 0 0 0" Click="SpeakBtn3_Click">
                         <Polygon Points="0,0 32,20, 0,40" Fill="Green" Height="40" Width="32" RenderTransformOrigin="0.544,0.492" />
                     </Button>
                 </Border>
-                <Border BorderBrush="Black" BorderThickness="1" Margin="10,382,10,18" CornerRadius="25" Padding="10 10 0 10" Height="114">
+                <Border BorderBrush="Black" BorderThickness="1" Margin="10,387,10,23" CornerRadius="25" Padding="10 10 0 10" Height="114" Grid.ColumnSpan="2">
                     <Button x:Name="SpeakBtn4" FontSize="14"  Margin="26,26,789,26"
 	                    Background="Transparent" BorderThickness="0" Padding="0 0 0 0" Click="SpeakBtn4_Click">
                         <Polygon Points="0,0 32,20, 0,40" Fill="Green" Height="40" Width="32" RenderTransformOrigin="0.544,0.492" />
 
                     </Button>
                 </Border>
-                <TextBlock x:Name="Word2" TextWrapping="Wrap" Text="Example words 2" FontSize="24" TextAlignment="Left" Margin="100,150,29,340"/>
-                <TextBlock x:Name="translation2" TextWrapping="Wrap" Text="Example words' translation 2" FontSize="18" TextAlignment="Left" Margin="100,192,29,298"/>
-                <TextBlock x:Name="Word3" TextWrapping="Wrap" Text="Example words 3" FontSize="24" TextAlignment="Left" Margin="100,274,29,216"/>
-                <TextBlock x:Name="translation3" TextWrapping="Wrap" Text="Example words' translation 3" FontSize="18" TextAlignment="Left" Margin="100,317,29,173"/>
-                <TextBlock x:Name="Word4" TextWrapping="Wrap" Text="Example words 4" FontSize="24" TextAlignment="Left" Margin="100,401,29,89"/>
-                <TextBlock x:Name="translation4" TextWrapping="Wrap" Text="Example words' translation 4" FontSize="18" TextAlignment="Left" Margin="100,444,29,46"/>
+                <TextBlock x:Name="Word2" TextWrapping="Wrap" Text="Example words 2" FontSize="24" TextAlignment="Left" Margin="71,150,29,340" Grid.Column="1"/>
+                <TextBlock x:Name="translation2" TextWrapping="Wrap" Text="Example words' translation 2" FontSize="18" TextAlignment="Left" Margin="71,192,29,298" Grid.Column="1"/>
+                <TextBlock x:Name="Word3" TextWrapping="Wrap" Text="Example words 3" FontSize="24" TextAlignment="Left" Margin="71,274,29,216" Grid.Column="1"/>
+                <TextBlock x:Name="translation3" TextWrapping="Wrap" Text="Example words' translation 3" FontSize="18" TextAlignment="Left" Margin="71,317,29,173" Grid.Column="1"/>
+                <TextBlock x:Name="Word4" TextWrapping="Wrap" Text="Example words 4" FontSize="24" TextAlignment="Left" Margin="71,401,29,89" Grid.Column="1"/>
+                <TextBlock x:Name="translation4" TextWrapping="Wrap" Text="Example words' translation 4" FontSize="18" TextAlignment="Left" Margin="71,444,29,46" Grid.Column="1"/>
 
 
             </Grid>
