@@ -4,9 +4,52 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:RapidTranslationWPF_MVVM.Views"
+             xmlns:vm="clr-namespace:RapidTranslationWPF_MVVM.ViewModels"
              mc:Ignorable="d" 
              d:DesignHeight="632" d:DesignWidth="895">
-    <Grid>
-            
-    </Grid>
+
+    <UserControl.DataContext>
+        <vm:TranslationSentencePageViewModel/>
+    </UserControl.DataContext>
+    <DockPanel DockPanel.Dock="Bottom">
+
+        <Grid DockPanel.Dock="Top" Margin="10 0 5 5" Height="272" Background="#F5F5F5">
+
+            <TextBox x:Name="input" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="792" Height="198" Text="{Binding InputText, Mode=TwoWay}"/>
+            <ComboBox x:Name="langueBefore" HorizontalAlignment="Left" Margin="44,10,0,0" VerticalAlignment="Top" Width="120" SelectedItem="{Binding LanBefore, XPath=SelectedValue , Mode=TwoWay}" IsSynchronizedWithCurrentItem="True">
+                <ComboBoxItem IsSelected="True">Auto</ComboBoxItem>
+                <ComboBoxItem >English</ComboBoxItem>
+                <ComboBoxItem>Vietnamese</ComboBoxItem>
+            </ComboBox>
+
+        </Grid>
+        <Grid DockPanel.Dock="Top" Margin="0 5 0 5" Width="251" RenderTransformOrigin="0.425,0.459" >
+
+            <Border Grid.Column="1" Width="150" Height="48" BorderBrush="#0F9D58" BorderThickness="1" CornerRadius="25" >
+
+                <Button x:Name="translate" BorderBrush="Transparent" Padding="0" Background="#0F9D58" Command="{Binding TranslateSentenceCommand}">
+
+                    <TextBlock Text="Translate" FontSize="18" TextWrapping="Wrap">
+
+                    </TextBlock>
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="25"></Setter>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            </Border>
+        </Grid>
+
+        <Grid DockPanel.Dock="Bottom" Margin="10 0 5 5" Height="272" Background="#F5F5F5">
+            <ComboBox x:Name="langueAfter" HorizontalAlignment="Left" Margin="44,10,0,0" VerticalAlignment="Top" Width="120" SelectedItem="{Binding LanAfter,XPath=SelectedValue, Mode=TwoWay}" IsSynchronizedWithCurrentItem="True">
+                <ComboBoxItem>English</ComboBoxItem>
+                <ComboBoxItem  IsSelected="True" >Vietnamese</ComboBoxItem>
+            </ComboBox>
+            <TextBox x:Name="output" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="792" Height="198" Margin="45,40,0,0" Text="{Binding OutputText, Mode=OneWay}"/>
+
+        </Grid>
+        
+    </DockPanel>
+    
 </UserControl>

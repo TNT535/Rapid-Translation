@@ -75,6 +75,18 @@
             </Border>
 
             <Border Width="250" Height="50" BorderBrush="#0F9D58" BorderThickness="1" CornerRadius="25" Margin="10 10 0 10">
+                <Button BorderBrush="Transparent" Background="#FFFFFF" HorizontalContentAlignment="Left" Padding="20 0 0 0" Command="{Binding TranslateSentenceCommand}">
+                    <TextBlock Text="Translate Sentence" FontSize="18" TextWrapping="Wrap" Foreground="#666666">
+                    </TextBlock>
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="25"></Setter>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            </Border>
+
+            <Border Width="250" Height="50" BorderBrush="#0F9D58" BorderThickness="1" CornerRadius="25" Margin="10 10 0 10">
                 <Button BorderBrush="Transparent" Background="#FFFFFF" HorizontalContentAlignment="Left" Padding="20 0 0 0" Command="{Binding SettingsCommand}">
                     <TextBlock Text="Settings" FontSize="18" TextWrapping="Wrap" Foreground="#666666">
 

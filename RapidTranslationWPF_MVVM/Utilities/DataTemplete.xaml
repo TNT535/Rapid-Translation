@@ -21,6 +21,10 @@
         <views:VocabularyView/>
     </DataTemplate>
 
+    <DataTemplate DataType="{x:Type vm:TranslationSentencePageViewModel}">
+        <views:TranslationSentencePageView/>
+    </DataTemplate>
+
     <DataTemplate DataType="{x:Type vm:SettingsViewModel}">
         <views:SettingsView/>
     </DataTemplate>

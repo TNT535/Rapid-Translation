@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:translate"
         mc:Ignorable="d"
-         Title="MainWindow" Height="700" Width="1200" Closing="Window_Closing">
+         Title="MainWindow" Height="700" Width="1200">
     <Grid>
         <DockPanel>
             <!--<TextBlock DockPanel.Dock="Top" Text="Le Van Tri" HorizontalAlignment="Right">
@@ -73,7 +73,7 @@
                     </Border>
 
                     <Border Width="250" Height="50" BorderBrush="#0F9D58" BorderThickness="1" CornerRadius="25" Margin="10 10 0 10">
-                        <Button BorderBrush="Transparent" Background="#FFFFFF" HorizontalContentAlignment="Left" Padding="20 0 0 0" Click="SettingClick">
+                        <Button BorderBrush="Transparent" Background="#FFFFFF" HorizontalContentAlignment="Left" Padding="20 0 0 0">
                             <TextBlock Text="Settings" FontSize="18" TextWrapping="Wrap" Foreground="#666666">
 
                             </TextBlock>
@@ -106,7 +106,7 @@
 
                 <Grid DockPanel.Dock="Top" Margin="10 0 5 5" Height="272" Background="#F5F5F5">
                     
-                    <TextBox x:Name="input" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="792" Height="198" TextChanged="input_TextChanged"/>
+                    <TextBox x:Name="input" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="792" Height="198"/>
                     <ComboBox x:Name="langueBefore" HorizontalAlignment="Left" Margin="44,10,0,0" VerticalAlignment="Top" Width="120">
                         <ComboBoxItem IsSelected="True">Auto</ComboBoxItem>
                         <ComboBoxItem >English</ComboBoxItem>
@@ -141,7 +141,7 @@
                 </Grid>
             </DockPanel>
         </DockPanel>
-        <TextBox x:Name="output" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="792" Height="198" TextChanged="input_TextChanged" Margin="358,436,0,0"/>
+        <TextBox x:Name="output" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="792" Height="198" Margin="358,436,0,0"/>
 
     </Grid>
 </Window>

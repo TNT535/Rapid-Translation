@@ -25,12 +25,14 @@ namespace RapidTranslationWPF_MVVM.ViewModels
         public ICommand CaptureCommand { get; set; }
         public ICommand StatisticCommand { get; set; }
         public ICommand VocabularyCommand { get; set; }
+        public ICommand TranslateSentenceCommand { get; set; }
         public ICommand SettingsCommand { get; set; }
 
         private void Home(object obj) => CurrentView = new HomeViewModel();
         private void Capture(object obj) => CurrentView = new CaptureViewModel();
         private void Statistic(object obj) => CurrentView = new StatisticViewModel();
         private void Vocabulary(object obj) => CurrentView = new VocabularyViewModel();
+        private void TranslateSentence(object obj) => CurrentView = new TranslationSentencePageViewModel();
         private void Setting(object obj) => CurrentView = new SettingsViewModel();
 
         public NavigationViewModel()
@@ -39,6 +41,7 @@ namespace RapidTranslationWPF_MVVM.ViewModels
             CaptureCommand = new RelayCommand(Capture);
             StatisticCommand = new RelayCommand(Statistic);
             VocabularyCommand = new RelayCommand(Vocabulary);
+            TranslateSentenceCommand = new RelayCommand(TranslateSentence);
             SettingsCommand = new RelayCommand(Setting);
 
             CaptureModeSelectCommand = new RelayCommand(CaptureModeSelect);
