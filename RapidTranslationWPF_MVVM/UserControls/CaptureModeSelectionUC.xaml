@@ -4,9 +4,74 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:RapidTranslationWPF_MVVM.UserControls"
+             xmlns:vm="clr-namespace:RapidTranslationWPF_MVVM.ViewModels"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
+    <UserControl.DataContext>
+        <vm:CaptureModeSelectionViewModel/>
+    </UserControl.DataContext>
+    <UserControl.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+    </UserControl.Resources>
+
+    <Grid Background="#f1f1f1" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel>
+
+            <Border Width="150" Height="48" BorderBrush="#0F9D58" BorderThickness="1" CornerRadius="25" HorizontalAlignment="Center" Margin="0 200 0 25">
+                <Button x:Name="btnCapture" BorderBrush="Transparent" Padding="0" Background="#FFFFFF" Height="46" VerticalAlignment="Top" Command="{Binding RelativeSource={RelativeSource AncestorType=Window},
+                                                                                                                                                            Path=DataContext.CaptureImageModeCommand}">
+                    <TextBlock Text="Capture" FontSize="18" TextWrapping="Wrap">
+                    </TextBlock>
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="25"></Setter>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            </Border>
+
+            <TextBlock Text="After click, use Ctrl + W or press f9 to freeze the screen." HorizontalAlignment="Center">
+
+            </TextBlock>
+
+        </StackPanel>
+        <StackPanel Grid.Column="1">
+            <Border Grid.Column="1" Width="150" Height="48" BorderBrush="#0F9D58" BorderThickness="1" CornerRadius="25" HorizontalAlignment="Center" Margin="0 200 0 25">
+                <Button x:Name="btnLoadImage" BorderBrush="Transparent" Padding="0" Background="#FFFFFF" Height="46" VerticalAlignment="Top" Command="{Binding OpenFileCommand}">
+                    <TextBlock Text="Load Image" FontSize="18" TextWrapping="Wrap">
+                    </TextBlock>
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="25"></Setter>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            </Border>
+
+            <TextBlock Text="Load image from local file." HorizontalAlignment="Center">
+
+            </TextBlock>
+
+            <Border Width="150" Height="48" BorderBrush="#0F9D58" BorderThickness="1" CornerRadius="25" Visibility="{Binding StateNext, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <Button BorderBrush="Transparent" Padding="0" Background="#FFFFFF" Height="46" VerticalAlignment="Bottom" Visibility="{Binding StateNext, Converter={StaticResource BooleanToVisibilityConverter}}" Command="{Binding RelativeSource={RelativeSource AncestorType=Window},
+                                                                                                                                                            Path=DataContext.CaptureImageModeCommand}">
+                    <TextBlock Text="Next >" FontSize="18" TextWrapping="Wrap" Visibility="{Binding StateNext, Converter={StaticResource BooleanToVisibilityConverter}}">
+                    </TextBlock>
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="25"></Setter>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            </Border>
+
+
+
+        </StackPanel>
+
     </Grid>
 </UserControl>
