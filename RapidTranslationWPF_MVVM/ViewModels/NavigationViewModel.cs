@@ -7,12 +7,13 @@ using System.Threading.Tasks;
 using System.Transactions;
 using System.Windows.Input;
 using RapidTranslationWPF_MVVM.Utilities;
+using RapidTranslationWPF_MVVM.Models;
 
 namespace RapidTranslationWPF_MVVM.ViewModels
 {
     public class NavigationViewModel : ViewModelBase
     {
-            
+
         private object _currentView;
         public object CurrentView
         {
@@ -40,8 +41,26 @@ namespace RapidTranslationWPF_MVVM.ViewModels
             VocabularyCommand = new RelayCommand(Vocabulary);
             SettingsCommand = new RelayCommand(Setting);
 
+            CaptureModeSelectCommand = new RelayCommand(CaptureModeSelect);
+            CaptureImageModeCommand = new RelayCommand(ImageMode);
+
             // Startup Page
             CurrentView = new CaptureViewModel();
+        }
+
+        public ICommand CaptureModeSelectCommand { get; set; }
+        public ICommand CaptureImageModeCommand { get; set; }
+
+        private void CaptureModeSelect(object obj) => CurrentView = new CaptureModeSelectionViewModel();
+        private void ImageMode(object obj) => CurrentView = new CaptureProgressViewModel();
+
+
+        //Capture
+        private Capture _captureObject = new Models.Capture();
+        public Capture CaptureObject
+        {
+            get { return _captureObject; }
+            set { _captureObject = value;OnPropertyChanged(); }
         }
     }
 

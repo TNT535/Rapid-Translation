@@ -7,7 +7,7 @@
         xmlns:vm="clr-namespace:RapidTranslationWPF_MVVM.ViewModels"
         xmlns:uc="clr-namespace:RapidTranslationWPF_MVVM.UserControls"
         mc:Ignorable="d"
-        Title="MainWindow" Height="700" Width="1200">
+        Title="MainWindow" Height="700" Width="1200" WindowState="{Binding CaptureObject.CaptureWindowState, Mode=TwoWay}">
     <Window.DataContext>
         <vm:NavigationViewModel/>
     </Window.DataContext>

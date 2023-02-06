@@ -10,10 +10,9 @@ using System.Drawing;
 using OpenCvSharp;
 using OpenCvSharp.Extensions;
 
-namespace WinFormsApp1
-
+namespace RapidTranslationWPF_MVVM.Utilities
 {
-    public class OCR
+    public class OCRCustom
     {
         public static string ImageToTextnonRelease(Bitmap bmp)
         {
@@ -48,7 +47,6 @@ namespace WinFormsApp1
                             //output += $"Text (GetText): \r\n{text.ToString()}";
 
                             output += text.ToString();
-
 
                             using (var iter = page.GetIterator())
                             {
@@ -109,7 +107,7 @@ namespace WinFormsApp1
             Bitmap bitmap2 = new Bitmap(bmp);
             Bitmap bitmap3 = new Bitmap(bmp);
             string ocrString = Detect(bitmap1);
-            if (ocrString.Length != 0 && mode == 0 )
+            if (ocrString.Length != 0 && mode == 0)
             {
                 return ocrString;
             }

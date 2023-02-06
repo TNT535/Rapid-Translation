@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:RapidTranslationWPF_MVVM.Views"
              xmlns:vm="clr-namespace:RapidTranslationWPF_MVVM.ViewModels"
+             xmlns:uc="clr-namespace:RapidTranslationWPF_MVVM.UserControls"
              mc:Ignorable="d" 
              d:DesignHeight="632" d:DesignWidth="895">
 
@@ -16,7 +17,11 @@
         <StackPanel>
             <TextBlock Text="Capture Windows have context:" />
             <TextBox Text="{Binding CaptureString}" />
-        </StackPanel>
+            <Button Content="Start capture" Command="{Binding RelativeSource={RelativeSource AncestorType=Window},
+                             Path=DataContext.CaptureModeSelectCommand}" />
 
+        </StackPanel>
     </Grid>
+    <!--<uc:CaptureModeSelectionUC/>-->
+
 </UserControl>
