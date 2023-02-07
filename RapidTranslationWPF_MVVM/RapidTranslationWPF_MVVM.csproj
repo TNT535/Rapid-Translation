@@ -10,11 +10,15 @@
 
   <ItemGroup>
     <None Remove="Image\Test_Img_RT_Application.png" />
+    <None Remove="UserData\dataFile.xml" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Include="Image\Test_Img_RT_Application.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="UserData\dataFile.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
 

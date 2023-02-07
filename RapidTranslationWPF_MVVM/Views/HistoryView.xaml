@@ -4,9 +4,48 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:RapidTranslationWPF_MVVM.Views"
+             xmlns:vm="clr-namespace:RapidTranslationWPF_MVVM.ViewModels"
              mc:Ignorable="d" 
              d:DesignHeight="632" d:DesignWidth="895">
+    <UserControl.DataContext>
+        <vm:HistoryViewModel/>
+    </UserControl.DataContext>
     <Grid>
-            
+        <ScrollViewer>
+            <StackPanel >
+                <ItemsControl ItemsSource="{Binding ListWordHistoryObj.ListWordHistorys}" >
+
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <!--<WrapPanel/>-->
+                            <StackPanel />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Border Margin="8" BorderBrush="#0F9D58" BorderThickness="1" CornerRadius="20" >
+                                <Button x:Name="button" BorderBrush="Transparent" Padding="12 4 12 4" Grid.Column="0" Background="Green" HorizontalContentAlignment="Stretch" Command="{Binding RelativeSource={RelativeSource AncestorType=UserControl}, Path=DataContext.GetFullInformationCommand}">
+                                    <StackPanel>
+                                        <TextBlock Margin="0" Padding="0" Text="{Binding Word}" FontSize="24" TextWrapping="Wrap">
+
+                                        </TextBlock>
+                                        <TextBlock Margin="0" Padding="0" Text="{Binding Mean}" FontSize="24" TextWrapping="Wrap">
+
+                                        </TextBlock>
+                                    </StackPanel>
+                                    <Button.Resources>
+                                        <Style TargetType="{x:Type Border}">
+                                            <Setter Property="CornerRadius" Value="20"></Setter>
+                                        </Style>
+                                    </Button.Resources>
+                                </Button>
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+
+                </ItemsControl>
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </UserControl>

@@ -42,7 +42,8 @@
                 </Button>
             </Border>
             <Border Grid.Column="1" Width="150" Height="48" BorderBrush="#0F9D58" BorderThickness="1" CornerRadius="25" >
-                <Button x:Name="done" BorderBrush="Transparent" Padding="0" Background="#0F9D58">
+                <Button x:Name="done" BorderBrush="Transparent" Padding="0" Background="#0F9D58" Command="{Binding RelativeSource={RelativeSource AncestorType=Window},
+                             Path=DataContext.TranslateSentenceCommand}" >
                     <TextBlock Text="Done" FontSize="18" TextWrapping="Wrap">
 
                     </TextBlock>

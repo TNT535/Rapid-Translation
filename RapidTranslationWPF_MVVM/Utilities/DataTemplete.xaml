@@ -25,6 +25,10 @@
         <views:TranslationSentencePageView/>
     </DataTemplate>
 
+    <DataTemplate DataType="{x:Type vm:HistoryViewModel}">
+        <views:HistoryView/>
+    </DataTemplate>
+
     <DataTemplate DataType="{x:Type vm:SettingsViewModel}">
         <views:SettingsView/>
     </DataTemplate>
@@ -32,7 +36,7 @@
     <DataTemplate DataType="{x:Type vm:CaptureModeSelectionViewModel}">
         <uc:CaptureModeSelectionUC/>
     </DataTemplate>
-
+    
     <DataTemplate DataType="{x:Type vm:CaptureProgressViewModel}">
         <views:CaptureProgressView />
     </DataTemplate>
