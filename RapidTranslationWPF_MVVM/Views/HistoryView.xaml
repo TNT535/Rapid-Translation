@@ -6,46 +6,173 @@
              xmlns:local="clr-namespace:RapidTranslationWPF_MVVM.Views"
              xmlns:vm="clr-namespace:RapidTranslationWPF_MVVM.ViewModels"
              mc:Ignorable="d" 
-             d:DesignHeight="632" d:DesignWidth="895">
+             d:DesignHeight="700" d:DesignWidth="1200">
     <UserControl.DataContext>
         <vm:HistoryViewModel/>
     </UserControl.DataContext>
-    <Grid>
-        <ScrollViewer>
-            <StackPanel >
-                <ItemsControl ItemsSource="{Binding ListWordHistoryObj.ListWordHistorys}" >
+    <Grid Background="White">
+        <DockPanel Background="White" RenderTransformOrigin="0.582,0.556">
 
-                    <ItemsControl.ItemsPanel>
-                        <ItemsPanelTemplate>
-                            <!--<WrapPanel/>-->
-                            <StackPanel />
-                        </ItemsPanelTemplate>
-                    </ItemsControl.ItemsPanel>
+            <StackPanel DockPanel.Dock="Left" Margin="0 10 46 0">
+                <StackPanel>
+                    <Canvas x:Name="HEADERLOGO" Height="60" Width="100">
+                        <Path StrokeThickness="3" StrokeStartLineCap="Round" StrokeEndLineCap="Round" Stroke="#0F9D58" Data="M14.6563 16.465C13.5913 27.0862 11.8626 37.4062 9.50395 47.8481C8.73059 51.2718 7.96619 54.7004 7.01661 58.0836C6.64656 59.402 6.75996 61.1998 5.55085 61.9325C4.75202 62.4165 5.05512 60.1695 5.06227 59.2679C5.08489 56.4142 5.31423 53.5611 5.63969 50.7242C7.25861 36.6126 10.1686 19.4163 19.8086 7.96362C25.0143 1.77913 32.8671 3.10179 32.7339 11.7279C32.6305 18.4249 28.7997 24.5842 23.2731 28.5614C22.3549 29.2223 12.7614 32.7801 13.4126 33.1293C25.1144 39.404 37.5098 44.5577 49.2125 50.8934C50.2222 51.44 58.7386 55.9413 60.7609 58.0836C62.1214 59.5248 59.4284 59.271 59.4284 59.86"/>
+                        <Path StrokeThickness="3" StrokeStartLineCap="Round" StrokeEndLineCap="Round" Stroke="#0F9D58" Data="M72.2204 2C72.2204 18.1333 72.742 36.1921 69.8219 51.4855"/>
+                        <Path StrokeThickness="3" StrokeStartLineCap="Round" StrokeEndLineCap="Round" Stroke="#0F9D58" Data="M55.4309 2.76129C71.9803 3.07029 88.4748 4.19465 105 5.04524"/>
+                    </Canvas>
+                    <TextBlock x:Name="IT008" Width="100" Height="48" Foreground="#0f9d58" FontSize="40">IT008</TextBlock>
 
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate>
-                            <Border Margin="8" BorderBrush="#0F9D58" BorderThickness="1" CornerRadius="20" >
-                                <Button x:Name="button" BorderBrush="Transparent" Padding="12 4 12 4" Grid.Column="0" Background="Green" HorizontalContentAlignment="Stretch" Command="{Binding RelativeSource={RelativeSource AncestorType=UserControl}, Path=DataContext.GetFullInformationCommand}">
-                                    <StackPanel>
-                                        <TextBlock Margin="0" Padding="0" Text="{Binding Word}" FontSize="24" TextWrapping="Wrap">
+                </StackPanel>
 
-                                        </TextBlock>
-                                        <TextBlock Margin="0" Padding="0" Text="{Binding Mean}" FontSize="24" TextWrapping="Wrap">
+                <StackPanel>
+                    <Border Width="250" Height="50" BorderBrush="#0F9D58" BorderThickness="1" CornerRadius="25" Margin="10 10 0 10">
+                        <Button BorderBrush="Transparent" Background="#FFFFFF" HorizontalContentAlignment="Left" Padding="20 0 0 0">
+                            <TextBlock Text="Home" FontSize="18" TextWrapping="Wrap" Foreground="#666666">
+                            </TextBlock>
+                            <Button.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="25"></Setter>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                    </Border>
 
-                                        </TextBlock>
-                                    </StackPanel>
-                                    <Button.Resources>
-                                        <Style TargetType="{x:Type Border}">
-                                            <Setter Property="CornerRadius" Value="20"></Setter>
-                                        </Style>
-                                    </Button.Resources>
-                                </Button>
-                            </Border>
-                        </DataTemplate>
-                    </ItemsControl.ItemTemplate>
+                    <Border Width="250" Height="50" BorderBrush="#0F9D58" BorderThickness="1" CornerRadius="25" Margin="10 10 0 10">
+                        <Button BorderBrush="Transparent" Background="#FFFFFF" HorizontalContentAlignment="Left" Padding="20 0 0 0">
+                            <TextBlock Text="Capture" FontSize="18" TextWrapping="Wrap" Foreground="#666666">
 
-                </ItemsControl>
+                            </TextBlock>
+                            <Button.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="25"></Setter>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                    </Border>
+
+                    <Border Width="250" Height="50" BorderBrush="#0F9D58" BorderThickness="1" CornerRadius="25" Margin="10 10 0 10">
+                        <Button BorderBrush="Transparent" Background="#FFFFFF" HorizontalContentAlignment="Left" Padding="20 0 0 0">
+                            <TextBlock Text="Statistic" FontSize="18" TextWrapping="Wrap" Foreground="#666666">
+
+                            </TextBlock>
+                            <Button.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="25"></Setter>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                    </Border>
+
+                    <Border Width="250" Height="50" BorderBrush="#0F9D58" BorderThickness="1" CornerRadius="25" Margin="10 10 0 10">
+                        <Button BorderBrush="Transparent" Background="#FFFFFF" HorizontalContentAlignment="Left" Padding="20 0 0 0">
+                            <TextBlock Text="Vocabulary" FontSize="18" TextWrapping="Wrap" Foreground="#666666">
+                            </TextBlock>
+                            <Button.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="25"></Setter>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                    </Border>
+
+                    <Border Width="250" Height="50" BorderBrush="#0F9D58" BorderThickness="1" CornerRadius="25" Margin="10 10 0 10">
+                        <Button BorderBrush="Transparent" Background="#FFFFFF" HorizontalContentAlignment="Left" Padding="20 0 0 0">
+                            <TextBlock Text="Settings" FontSize="18" TextWrapping="Wrap" Foreground="#666666">
+
+                            </TextBlock>
+                            <Button.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="25"></Setter>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                    </Border>
+
+                </StackPanel>
             </StackPanel>
-        </ScrollViewer>
+            <Grid DockPanel.Dock="Top"  HorizontalAlignment="Right" Margin="0 5 5 5">
+                <Border BorderBrush="#0F9D58" BorderThickness="1" CornerRadius="10" Padding="5">
+                    <DockPanel HorizontalAlignment="Right">
+                        <Image x:Name="Avatar"  DockPanel.Dock="Left" Source="/Resources/avatar.png" Width="30" Height="30" ></Image>
+                        <TextBlock DockPanel.Dock="Top" Text="TRINEWTON">
+
+                        </TextBlock>
+                        <ProgressBar DockPanel.Dock="Bottom" Width="120" Height="10" Minimum="0" Maximum="100" Value="75" Foreground="#FFF4B400" Background="#D9D9D9">
+
+                        </ProgressBar>
+                    </DockPanel>
+
+                </Border>
+            </Grid>
+
+
+
+            <Grid DockPanel.Dock="Bottom" Background="#F0F0F0" Margin="10 5 5 5" Height="524" >
+                <Border BorderBrush="Black" BorderThickness="1" Margin="10,10,10,400" CornerRadius="25" Padding="10 10 0 10" Height="112" >
+
+                    <Button x:Name="SpeakBtn1" FontSize="14"  Margin="26,26,789,26"
+	                    Background="Transparent" BorderThickness="0" Padding="0 0 0 0" Click="SpeakBtn1_Click">
+                        <Polygon Points="0,0 32,20, 0,40" Fill="Green" Height="40" Width="32" RenderTransformOrigin="0.544,0.492" />
+
+                    </Button>
+
+
+                </Border>
+                <TextBlock x:Name="Word1" TextWrapping="Wrap" Text="Hello" FontSize="24" TextAlignment="Left" Margin="100,24,29,466"/>
+                <TextBlock x:Name="translation1" TextWrapping="Wrap" Text="Xin chào" FontSize="18" TextAlignment="Left" Margin="100,67,29,423"/>
+
+                <Border BorderBrush="Black" BorderThickness="1" Margin="10,134,10,273" CornerRadius="25" Padding="10 10 0 10" Height="114">
+                    <Button x:Name="SpeakBtn2" FontSize="14"  Margin="26,26,789,26"
+	                    Background="Transparent" BorderThickness="0" Padding="0 0 0 0" Click="SpeakBtn2_Click">
+                        <Polygon Points="0,0 32,20, 0,40" Fill="Green" Height="40" Width="32" RenderTransformOrigin="0.544,0.492" />
+                    </Button>
+                </Border>
+
+                <Border BorderBrush="Black" BorderThickness="1" Margin="10,258,10,148" CornerRadius="25" Padding="10 10 0 10" Height="114">
+                    <Button x:Name="SpeakBtn3" FontSize="14"  Margin="26,26,789,26"
+	                    Background="Transparent" BorderThickness="0" Padding="0 0 0 0" Click="SpeakBtn3_Click">
+                        <Polygon Points="0,0 32,20, 0,40" Fill="Green" Height="40" Width="32" RenderTransformOrigin="0.544,0.492" />
+                    </Button>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="1" Margin="10,382,10,18" CornerRadius="25" Padding="10 10 0 10" Height="114">
+                    <Button x:Name="SpeakBtn4" FontSize="14"  Margin="26,26,789,26"
+	                    Background="Transparent" BorderThickness="0" Padding="0 0 0 0" Click="SpeakBtn4_Click">
+                        <Polygon Points="0,0 32,20, 0,40" Fill="Green" Height="40" Width="32" RenderTransformOrigin="0.544,0.492" />
+
+                    </Button>
+                </Border>
+                <TextBlock x:Name="Word2" TextWrapping="Wrap" Text="Fish" FontSize="24" TextAlignment="Left" Margin="100,150,29,340"/>
+                <TextBlock x:Name="translation2" TextWrapping="Wrap" Text="Cá" FontSize="18" TextAlignment="Left" Margin="100,192,29,298"/>
+                <TextBlock x:Name="Word3" TextWrapping="Wrap" Text="The brown fox jumps over the fence" FontSize="24" TextAlignment="Left" Margin="100,274,29,216"/>
+                <TextBlock x:Name="translation3" TextWrapping="Wrap" Text="Con cáo nâu nhảy qua hàng rào" FontSize="18" TextAlignment="Left" Margin="100,317,29,173"/>
+                <TextBlock x:Name="Word4" TextWrapping="Wrap" Text="This is an example sentence" FontSize="24" TextAlignment="Left" Margin="100,401,29,89"/>
+                <TextBlock x:Name="translation4" TextWrapping="Wrap" Text="Đây là một câu ví dụ" FontSize="18" TextAlignment="Left" Margin="100,444,29,46"/>
+
+
+            </Grid>
+
+
+
+        </DockPanel>
+        <Button Name="nextBtn" Height="40" Width="32"  HorizontalAlignment="Left" Margin="795,641,0,15
+                "  Background="Transparent" BorderThickness="0" Padding="0 0 0 0">
+
+            <Polygon Points="0,0 32,20, 0,40" Fill="Green" Height="40" Width="32" RenderTransformOrigin="0.544,0.492" />
+        </Button>
+        <Button Name="prevBtn" Height="40" Width="32"  HorizontalAlignment="Left" Margin="600,645,0,15" BorderThickness="0" Padding="0 0 0 0"  Background="Transparent" RenderTransformOrigin="0.5,0.5">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="180
+                                     "/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+
+            <Polygon Points="0,0 32,20, 0,40" Fill="Green" Height="40" Width="32" RenderTransformOrigin="0.544,0.492" />
+        </Button>
+        <TextBlock TextWrapping="Wrap" Text="Page 1" Margin="668,643,0,17" HorizontalAlignment="Left" FontSize="32
+                   " Width="99"/>
     </Grid>
 </UserControl>
