@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:RapidTranslationWPF_MVVM.Views"
              xmlns:vm="clr-namespace:RapidTranslationWPF_MVVM.ViewModels"
+             xmlns:utilities="clr-namespace:RapidTranslationWPF_MVVM.Utilities"
 
              mc:Ignorable="d" 
              d:DesignHeight="632" d:DesignWidth="895">
@@ -12,10 +13,149 @@
     <UserControl.DataContext>
         <vm:SettingsViewModel/>
     </UserControl.DataContext>
-    <Grid>
-        <StackPanel>
-            <TextBlock Text="Setting Windows have context:" />
-            <TextBox Text="{Binding SettingsString}" />
+
+    <UserControl.Resources>
+        <utilities:WPFBitmapConverter x:Key="ImageConverter"/>
+        <utilities:BoolToColorConverter x:Key="BoolToColorConverter"/>
+    </UserControl.Resources>
+
+    <DockPanel DockPanel.Dock="Bottom">
+        <StackPanel HorizontalAlignment="Left">
+            <TextBox x:Name="NameBox" VerticalAlignment="Stretch" VerticalContentAlignment="Center" Padding="10" Margin="10 10 10 10" Text="{Binding UserInfo.Name}">
+                <!--
+                        <TextBox.Text>Name: John </TextBox.Text>
+                        -->
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="25"/>
+                        <Setter Property="Height" Value="50"/>
+                        <Setter Property="Width" Value="350"/>
+                    </Style>
+                </TextBox.Resources>
+                <!--<TextBox.Background>
+                    <ImageBrush ImageSource="/Resources/BoxName.png" AlignmentX="Left" Stretch="None" />
+                </TextBox.Background>-->
+            </TextBox>
+
+            <TextBox x:Name="SurnameBox" VerticalAlignment="Stretch" VerticalContentAlignment="Center" Padding="10" Margin="10 10 10 10" Text="{Binding UserInfo.SurName}">
+                <!--
+                        <TextBox.Text>Surname: Smith</TextBox.Text>
+                        -->
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="25"/>
+                        <Setter Property="Height" Value="50"/>
+                        <Setter Property="Width" Value="350"/>
+                    </Style>
+                </TextBox.Resources>
+                <!--<TextBox.Background>
+                    <ImageBrush ImageSource="/Resources/BoxSurname.png" AlignmentX="Left" Stretch="None" />
+                </TextBox.Background>-->
+            </TextBox>
+
+            <TextBox x:Name="PatronymicBox" VerticalAlignment="Stretch" VerticalContentAlignment="Center" Padding="10" Margin="10 10 10 10" Text="{Binding UserInfo.Patronimic}">
+                <!--
+                        <TextBox.Text>Patronymic: Smith</TextBox.Text>
+                        -->
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="25"/>
+                        <Setter Property="Height" Value="50"/>
+                        <Setter Property="Width" Value="350"/>
+                    </Style>
+                </TextBox.Resources>
+                <!--<TextBox.Background>
+                    <ImageBrush ImageSource="/Resources/BoxPatronymic.png" AlignmentX="Left" Stretch="None" />
+                </TextBox.Background>-->
+            </TextBox>
+
+            <DatePicker VerticalContentAlignment="Center" Padding="10" Margin="10 10 10 10">
+                <DatePicker.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="25"/>
+                        <Setter Property="Height" Value="50"/>
+                        <Setter Property="Width" Value="350"/>
+                    </Style>
+                </DatePicker.Resources>
+            </DatePicker>
+
+            <ComboBox VerticalContentAlignment="Center" Padding="10" Margin="10 10 10 10">
+                <ComboBoxItem>Female</ComboBoxItem>
+                <ComboBoxItem IsSelected="True">Male</ComboBoxItem>
+                <ComboBoxItem>Other</ComboBoxItem>
+
+                <ComboBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="25"/>
+                        <Setter Property="Height" Value="50"/>
+                        <Setter Property="Width" Value="350"/>
+                    </Style>
+                </ComboBox.Resources>
+            </ComboBox>
+
+            <ComboBox VerticalContentAlignment="Center" Padding="10" Margin="10 10 10 10">
+                <ComboBoxItem>Working</ComboBoxItem>
+                <ComboBoxItem IsSelected="True">Studying</ComboBoxItem>
+                <ComboBoxItem>Other</ComboBoxItem>
+
+                <ComboBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="25"/>
+                        <Setter Property="Height" Value="50"/>
+                        <Setter Property="Width" Value="350"/>
+                    </Style>
+                </ComboBox.Resources>
+            </ComboBox>
+
+            <TextBox VerticalAlignment="Stretch" VerticalContentAlignment="Center" Padding="10" Margin="10 10 10 10">
+                <TextBox.Text>Description</TextBox.Text>
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="25"/>
+                        <Setter Property="Height" Value="50"/>
+                        <Setter Property="Width" Value="350"/>
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
         </StackPanel>
-    </Grid>
+
+        <StackPanel>
+            <Image x:Name="AvatarInSettings" Source="{Binding UserInfo.Avatar, Converter={StaticResource ImageConverter}}" Width="300" Height="300" ></Image>
+            <Grid DockPanel.Dock="Top" Margin="0 5 0 5" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Border Grid.Column="0" Width="150" Height="48" BorderBrush="#0F9D58" BorderThickness="1" CornerRadius="25" >
+                    <Button x:Name="ChangeAvatar" BorderBrush="Transparent" Padding="0" Background="#FFFFFF" Height="46" VerticalAlignment="Top">
+                        <TextBlock>
+                            <TextBlock.Text>Change Avatar</TextBlock.Text>
+                            <TextBlock.FontSize>18</TextBlock.FontSize>
+                            <TextBlock.TextWrapping>Wrap</TextBlock.TextWrapping>
+                            <TextBlock.Foreground>#666666</TextBlock.Foreground>
+                        </TextBlock>
+
+                        <Button.Resources>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="25"></Setter>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                </Border>
+                <Border Grid.Column="1" Width="150" Height="48" BorderBrush="#0F9D58" BorderThickness="1" CornerRadius="25" >
+                    <Button x:Name="SaveProfile" BorderBrush="Transparent" Padding="0" Background="#0F9D58" Command="{Binding SaveInfoCommand}">
+                        <TextBlock Text="Save profile" FontSize="18" TextWrapping="Wrap">
+
+                        </TextBlock>
+                        <Button.Resources>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="25"></Setter>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                </Border>
+            </Grid>
+        </StackPanel>
+    </DockPanel>
 </UserControl>

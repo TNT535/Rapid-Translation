@@ -19,6 +19,21 @@ namespace RapidTranslationWPF_MVVM.ViewModels
         {
             _exampleModel = new ExampleModel();
             UserInfoString = "vm: user info user control window";
+            UserInfoObj = new UserInfo();
+        }
+
+        private UserInfo _userInfoObj = new UserInfo();
+        public UserInfo UserInfoObj
+        {
+            get
+            {
+                { return _userInfoObj; }
+            }
+            set
+            {
+                { _userInfoObj = value; OnPropertyChanged(); }
+            }
+
         }
     }
 }
