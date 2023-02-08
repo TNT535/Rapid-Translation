@@ -41,5 +41,11 @@
         <views:CaptureProgressView />
     </DataTemplate>
     
+    <DataTemplate DataType="{x:Type vm:UserInfoViewModel}">
+        <uc:UserInfoUC />
+    </DataTemplate>
+    
+    
+    
     
 </ResourceDictionary>

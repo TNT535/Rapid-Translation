@@ -5,16 +5,23 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:RapidTranslationWPF_MVVM.UserControls"
              xmlns:vm="clr-namespace:RapidTranslationWPF_MVVM.ViewModels"
+             xmlns:utilities="clr-namespace:RapidTranslationWPF_MVVM.Utilities"
              mc:Ignorable="d" 
              d:DesignHeight="42" d:DesignWidth="162">
 
     <UserControl.DataContext>
         <vm:UserInfoViewModel/>
     </UserControl.DataContext>
+
+    <UserControl.Resources>
+        <utilities:WPFBitmapConverter x:Key="ImageConverter"/>
+        <utilities:BoolToColorConverter x:Key="BoolToColorConverter"/>
+    </UserControl.Resources>
+
     <Border BorderBrush="#0F9D58" BorderThickness="1" CornerRadius="10" Padding="5">
         <DockPanel HorizontalAlignment="Right">
-            <Image x:Name="Avatar"  DockPanel.Dock="Left" Source="/Resources/avatar.png" Width="30" Height="30" ></Image>
-            <TextBlock DockPanel.Dock="Top" Text="{Binding UserInfoString}">
+            <Image x:Name="Avatarbar"  DockPanel.Dock="Left" Source="{Binding UserInfoObj.Avatar, Converter={StaticResource ImageConverter}}" Width="30" Height="30" ></Image>
+            <TextBlock DockPanel.Dock="Top" Text="{Binding UserInfoObj.Name, Mode=OneWay}">
 
             </TextBlock>
             <ProgressBar DockPanel.Dock="Bottom" Width="120" Height="10" Minimum="0" Maximum="100" Value="75" Foreground="#FFF4B400" Background="#D9D9D9">
