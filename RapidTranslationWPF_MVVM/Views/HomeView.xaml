@@ -15,7 +15,24 @@
     <Grid>
         <StackPanel>
             <TextBlock Text="Home Windows have context:" />
-            <TextBox Text="{Binding HomeString}" />
+
+            <TextBox Text="{Binding HomeString, Mode=TwoWay}">
+                <TextBox.InputBindings>
+                    <KeyBinding Key="Enter" Command="{Binding SearchVocabularyCommand}" />
+                </TextBox.InputBindings>
+            </TextBox>
+            
+            <Button Width="100" Margin="20" Command="{Binding SearchVocabularyCommand}">
+                <Button.Content> Search </Button.Content>
+            </Button>
+
+            <Border>
+                <Border.BorderThickness>1.2 1.2 1.2 1.2</Border.BorderThickness>
+                <Border.CornerRadius>3.2</Border.CornerRadius>
+                <Border.BorderBrush>Black</Border.BorderBrush>
+                <Border.Margin>6</Border.Margin> 
+                <TextBlock Text="{Binding ResultSearchVocab, Mode=OneWay}" />
+            </Border>
         </StackPanel>
 
     </Grid>
