@@ -33,7 +33,7 @@
                                         <ColumnDefinition Width="*" ></ColumnDefinition>
                                     </Grid.ColumnDefinitions>
 
-                                    <Button Grid.Column="0" Background="#F0F0F0" BorderThickness="0" Margin="20" Command="{Binding PlaySoundCommand}" CommandParameter="{Binding Word}">
+                                    <Button Grid.Column="0" Background="#F0F0F0" BorderThickness="0" Margin="20" Command="{Binding RelativeSource={RelativeSource AncestorType=UserControl}, Path=DataContext.PlaySoundCommand }" CommandParameter="{Binding Word}">
                                         <Button.Content>
                                             <Polygon Points="0,0 32,20, 0,40" Fill="Green" Height="40" Width="32" RenderTransformOrigin="0.544,0.492" />
                                         </Button.Content>
