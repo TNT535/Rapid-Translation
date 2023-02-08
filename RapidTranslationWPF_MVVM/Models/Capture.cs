@@ -55,7 +55,7 @@ namespace RapidTranslationWPF_MVVM.Models
             }
         }
 
-        private static Bitmap _captureImage = new Bitmap(@"\Test_Img_RT_Application.png");
+        private static Bitmap _captureImage = new Bitmap(@"Image\Test_Img_RT_Application.png");
         public Bitmap CaptureImage
         {
             get { return _captureImage; }
