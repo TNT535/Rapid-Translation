@@ -9,11 +9,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Data\vocab.0.4.json" />
     <None Remove="Image\Test_Img_RT_Application.png" />
     <None Remove="UserData\dataFile.xml" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Data\vocab.0.4.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Image\Test_Img_RT_Application.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
