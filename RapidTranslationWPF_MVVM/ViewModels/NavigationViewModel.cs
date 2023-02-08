@@ -50,16 +50,19 @@ namespace RapidTranslationWPF_MVVM.ViewModels
 
             CaptureModeSelectCommand = new RelayCommand(CaptureModeSelect);
             CaptureImageModeCommand = new RelayCommand(ImageMode);
+            SearchWordCaptureCommand = new RelayCommand(SearchWordCapture);
 
             // Startup Page
-            CurrentView = new CaptureViewModel();
+            CurrentView = new CaptureModeSelectionViewModel();
         }
 
         public ICommand CaptureModeSelectCommand { get; set; }
         public ICommand CaptureImageModeCommand { get; set; }
+        public ICommand SearchWordCaptureCommand { get; set; }
 
         private void CaptureModeSelect(object obj) => CurrentView = new CaptureModeSelectionViewModel();
         private void ImageMode(object obj) => CurrentView = new CaptureProgressViewModel();
+        private void SearchWordCapture(object obj) => CurrentView = new SearchWordCaptureViewModel();
 
 
         //Capture

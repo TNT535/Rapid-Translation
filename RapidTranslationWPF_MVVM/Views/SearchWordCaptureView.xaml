@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="RapidTranslationWPF_MVVM.Views.HomeView"
+﻿<UserControl x:Class="RapidTranslationWPF_MVVM.Views.SearchWordCaptureView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -8,16 +8,13 @@
              mc:Ignorable="d" 
              d:DesignHeight="632" d:DesignWidth="895">
 
-    <UserControl.DataContext>
-        <vm:HomeViewModel />
-    </UserControl.DataContext>
     <DockPanel DockPanel.Dock="Bottom">
 
         <Grid>
             <StackPanel>
                 <TextBlock Text="Translation"/>
 
-                <TextBox Text="{Binding HomeString, Mode=TwoWay}">
+                <TextBox Text="{Binding CaptureObject.WordInfoRightClick.Word, Mode=TwoWay}" IsReadOnly="True">
                     <TextBox.InputBindings>
                         <KeyBinding Key="Enter" Command="{Binding SearchVocabularyCommand}" />
                     </TextBox.InputBindings>
@@ -47,7 +44,7 @@
                     <Border.BorderThickness>1.2 1.2 1.2 1.2</Border.BorderThickness>
                     <Border.Margin>6</Border.Margin>
 
-                        <TextBlock Text="{Binding ResultSearchVocab, Mode=OneWay}" />
+                    <TextBlock Text="{Binding ResultSearchVocab, Mode=OneWay}" />
                 </Border>
             </StackPanel>
 

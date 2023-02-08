@@ -196,7 +196,9 @@
                                             </Style>
                                         </Button.Resources>
                                         <Button.InputBindings>
-                                            <MouseBinding Gesture="RightClick" Command="{Binding RelativeSource={RelativeSource AncestorType=UserControl}, Path=DataContext.SelectWordCommand}"  CommandParameter="{Binding DataContext, ElementName=button}" />
+                                            <MouseBinding Gesture="RightClick" Command="{Binding RelativeSource={RelativeSource AncestorType=UserControl}, Path=DataContext.SearchWordRightClickCommand}"  CommandParameter="{Binding DataContext, ElementName=button}" />
+                                            <MouseBinding Gesture="Alt+RightClick" Command="{Binding RelativeSource={RelativeSource AncestorType=Window},
+                             Path=DataContext.SearchWordCaptureCommand}" />
                                         </Button.InputBindings>
                                     </Button>
                                 </Border>

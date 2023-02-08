@@ -38,6 +38,7 @@ namespace RapidTranslationWPF_MVVM.ViewModels
             AddTextSampleCommand = new RelayCommand(AddTextSample);
             CaptureActionCommand = new RelayCommand(CaptureAction);
             SelectWordCommand = new RelayCommand(SelectWord);
+            SearchWordRightClickCommand = new RelayCommand(RightClickWord);
 
             ProcessingOnFile();
         }
@@ -52,6 +53,7 @@ namespace RapidTranslationWPF_MVVM.ViewModels
         public ICommand AddTextSampleCommand { get; set; }
         public ICommand CaptureActionCommand { get; set; }
         public ICommand SelectWordCommand { get; set; }
+        public ICommand SearchWordRightClickCommand { get; set; }
 
         private void AddTextSample(object obj) => CaptureObject.OCRWordList.Add("test command");
 
@@ -185,6 +187,12 @@ namespace RapidTranslationWPF_MVVM.ViewModels
         {
             WordInfo wordInfo = obj as WordInfo;
             wordInfo.Selected = !wordInfo.Selected;
+        }
+
+        private void RightClickWord(object obj)
+        {
+            WordInfo wordInfo = obj as WordInfo;
+            CaptureObject.WordInfoRightClick = wordInfo;
         }
 
         private void ProcessingOnFile()

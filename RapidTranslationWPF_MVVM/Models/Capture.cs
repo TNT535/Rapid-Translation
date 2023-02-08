@@ -76,6 +76,18 @@ namespace RapidTranslationWPF_MVVM.Models
                 RaisePropertyChanged("WindowState");
             }
         }
+
+        private static WordInfo _wordInfoRightClick= new WordInfo { Word = "test", Selected = true };
+        public WordInfo WordInfoRightClick
+        {
+            get { return _wordInfoRightClick; }
+            set
+            {
+                _wordInfoRightClick = value;
+                RaisePropertyChanged("WordInfoRightClick");
+            }
+        }
+
     }
 
 }
