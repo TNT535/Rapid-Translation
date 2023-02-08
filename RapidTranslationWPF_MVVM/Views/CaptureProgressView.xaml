@@ -195,6 +195,9 @@
                                                 <Setter Property="CornerRadius" Value="20"></Setter>
                                             </Style>
                                         </Button.Resources>
+                                        <Button.InputBindings>
+                                            <MouseBinding Gesture="RightClick" Command="{Binding RelativeSource={RelativeSource AncestorType=UserControl}, Path=DataContext.SelectWordCommand}"  CommandParameter="{Binding DataContext, ElementName=button}" />
+                                        </Button.InputBindings>
                                     </Button>
                                 </Border>
                             </DataTemplate>

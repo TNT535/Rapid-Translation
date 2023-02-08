@@ -32,7 +32,7 @@
 
         <!-- Area Chart in Code Behind -->
         <DVC:Chart Canvas.Top="80" Canvas.Left="10" Name="mcChart" 
-           Width="500" Height="300" 
+           Width="880" Height="400" 
            Background="#F5F5F5" Foreground="DarkBlue" 
            Title="Area Chart" LegendTitle="Hiring">
 
@@ -93,9 +93,9 @@
 
             <DVC:Chart.Series>
                 <DVC:AreaSeries Title="Fruits" 
-                ItemsSource="{StaticResource DayCountSearchCollection}"
-                IndependentValueBinding="{Binding Path=Day}"
-                DependentValueBinding="{Binding Path=Count}">
+                ItemsSource="{Binding }"
+                IndependentValueBinding="{Binding Path=days}"
+                DependentValueBinding="{Binding Path=numVocab}">
                 </DVC:AreaSeries>
             </DVC:Chart.Series>
 

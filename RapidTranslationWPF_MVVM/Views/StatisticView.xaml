@@ -3,10 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:DVC="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=DotNetProjects.DataVisualization.Toolkit"
              xmlns:local="clr-namespace:RapidTranslationWPF_MVVM.Views"
              xmlns:vm="clr-namespace:RapidTranslationWPF_MVVM.ViewModels" 
-             xmlns:DV="clr-namespace:System.Windows.Controls.DataVisualization;assembly=DotNetProjects.DataVisualization.Toolkit"
+             xmlns:DV="clr-namespace:System.Windows.Controls.DataVisualization;assembly=System.Windows.Controls.DataVisualization.Toolkit"
+             xmlns:DVC="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit"
+
              mc:Ignorable="d" 
              d:DesignHeight="632" d:DesignWidth="895">
 
@@ -147,7 +148,123 @@
                 </Border> 
             </Grid>
 
-             
+            <!--<local:ChartView HorizontalAlignment="Stretch" Margin="0 60" DataContext="{Binding DataContext.GetNumVocabPerDay}"></local:ChartView>-->
+
+            <Grid>
+
+                <!-- Area Chart in XAML - Collection -->
+                <!--<DVC:Chart Canvas.Top="80" Canvas.Left="10" Name="mcChart" 
+           Width="400" Height="250"
+           Background="LightSteelBlue"
+                   Title="Area Chart"
+                   LegendTitle="Area Chart Data">
+            <DVC:Chart.Series>
+                <DVC:AreaSeries 
+                    Title="Volume (M)"
+                    ItemsSource="{StaticResource AreaDataCollection}"
+                            IndependentValuePath="Date"
+                            DependentValuePath="Volume">
+                </DVC:AreaSeries>
+            </DVC:Chart.Series>            
+        </DVC:Chart>-->
+
+                <!-- Area Chart in Code Behind -->
+                <DVC:Chart Canvas.Top="80" Canvas.Left="10" Name="mcChart" 
+           Width="880" Height="400" 
+           Background="#F5F5F5" Foreground="DarkBlue" 
+           Title="Area Chart" LegendTitle="Hiring">
+
+                    <DVC:Chart.Palette>
+                        <DV:ResourceDictionaryCollection>
+                            <ResourceDictionary>
+                                <Style x:Key="DataPointStyle" TargetType="DVC:AreaDataPoint">
+                                    <Setter Property="Background">
+                                        <Setter.Value>
+                                            <LinearGradientBrush MappingMode="Absolute">
+                                                <GradientStop Color="Red" Offset="0.2"/>
+                                                <GradientStop Color="Green" Offset="0.45"/>
+                                                <GradientStop Color="Blue" Offset="0.55"/>
+                                                <GradientStop Color="#0F9D58" Offset="0.8"/>
+                                            </LinearGradientBrush>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </ResourceDictionary>
+                        </DV:ResourceDictionaryCollection>
+                    </DVC:Chart.Palette>
+
+
+                    <DVC:Chart.Axes>
+                        <!-- Add Horizontal and Vertical Axes-->
+                        <DVC:LinearAxis 
+                    Orientation="Y"
+                    Title="Count search"
+                    Interval="40"
+                    Foreground="Black"  
+                    Background="Transparent"
+                    FontFamily="Georgia"
+                    FontSize="14"
+                    FontWeight="Bold"
+                    
+                />
+
+                        <DVC:LinearAxis 
+                    Orientation="X"
+                    Title="Day"
+                    Foreground="Black"  
+                    Background="#F5F5F5" 
+                    FontFamily="Georgia"
+                    FontSize="14"
+                    FontWeight="Bold"
+                    Location="Bottom"
+                    Interval="30"
+                />
+                    </DVC:Chart.Axes>
+
+                    <!--<DVC:Chart.Series>
+                <DVC:AreaSeries 
+                    Title="Hiring by Quarter"
+                    IndependentValuePath="Key"
+                    DependentValuePath="Value">
+                </DVC:AreaSeries>
+            </DVC:Chart.Series>-->
+
+                    <DVC:Chart.Series>
+                        <DVC:AreaSeries Title="Fruits" 
+                ItemsSource="{Binding GetNumVocabPerDay}"
+                IndependentValueBinding="{Binding Path=days}"
+                DependentValueBinding="{Binding Path=numVocab}">
+                        </DVC:AreaSeries>
+                    </DVC:Chart.Series>
+
+                </DVC:Chart>
+
+                <!-- Collections Data Binding -->
+                <!--<DVC:Chart Name="mcChart" HorizontalAlignment="Left" 
+           Width="350" Height="250"
+           Background="LightSteelBlue" Title="Employee Salaries">
+            <DVC:Chart.Series>
+                  <DVC:ColumnSeries
+                        ItemsSource="{StaticResource EmployeesCollection}"
+                        DependentValueBinding="{Binding MaxSalary}"
+                        IndependentValueBinding="{Binding Title}"/>     
+            </DVC:Chart.Series>
+        </DVC:Chart>
+        <DVC:Chart Name="FruitChart" HorizontalAlignment="Right" 
+           Width="350" Height="250"
+           Background="LightSalmon" Title="Fruits Share">
+            <DVC:Chart.Series>
+                <DVC:PieSeries
+                        ItemsSource="{StaticResource FruitCollection}"
+                        DependentValueBinding="{Binding Share}"
+                        IndependentValueBinding="{Binding Name}"/>
+            </DVC:Chart.Series>
+        </DVC:Chart>-->
+
+
+            </Grid>
+
+
         </StackPanel>
 
     </Grid>

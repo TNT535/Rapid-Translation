@@ -47,7 +47,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="DotNetProjects.WpfToolkit.DataVisualization" Version="6.1.94" />
     <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.1418.22" />
     <PackageReference Include="System.Speech" Version="7.0.0" />
   </ItemGroup>
@@ -79,10 +78,10 @@
 
   <ItemGroup>
     <Reference Include="System.Windows.Controls.DataVisualization.Toolkit">
-      <HintPath>..\..\TEST_Folders\ChartingSample\ChartingSample\bin\Debug\System.Windows.Controls.DataVisualization.Toolkit.dll</HintPath>
+      <HintPath>System.Windows.Controls.DataVisualization.Toolkit.dll</HintPath>
     </Reference>
     <Reference Include="WPFToolkit">
-      <HintPath>..\..\TEST_Folders\ChartingSample\ChartingSample\bin\Debug\WPFToolkit.dll</HintPath>
+      <HintPath>WPFToolkit.dll</HintPath>
     </Reference>
   </ItemGroup>
 

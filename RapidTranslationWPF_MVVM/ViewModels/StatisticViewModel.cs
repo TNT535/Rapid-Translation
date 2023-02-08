@@ -29,7 +29,7 @@ namespace RapidTranslationWPF_MVVM.ViewModels
             Last7DayStored = getInfoVocabDay(7).LogDateTime.ToString();
             Last30DayStored = getInfoVocabDay(30).LogDateTime.ToString();
         }
-        
+
 
         private string totalVocab1Day;
         private string totalVocab7Day;
@@ -40,9 +40,9 @@ namespace RapidTranslationWPF_MVVM.ViewModels
         public DataGobalVariable dataGobalVariable = new DataGobalVariable();
 
         public string TotalVocab1Day
-        { 
+        {
             get { return totalVocab1Day; }
-            set { totalVocab1Day = value; OnPropertyChanged(); } 
+            set { totalVocab1Day = value; OnPropertyChanged(); }
         }
         public string TotalVocab7Day
         {
@@ -72,7 +72,7 @@ namespace RapidTranslationWPF_MVVM.ViewModels
         public ItemInfoLog getInfoVocabDay(int d)
         {
             DateTime nowDateTime = DateTime.Now;
-            List <ItemLog> itemLogs = dataGobalVariable.SourceItemLog;
+            List<ItemLog> itemLogs = dataGobalVariable.SourceItemLog;
 
             ItemInfoLog resultInfo = new ItemInfoLog();
             resultInfo.totalLogs = 0;
@@ -81,7 +81,7 @@ namespace RapidTranslationWPF_MVVM.ViewModels
             {
                 DateTime dateTimeItem = itemLog.LogDateTime;
                 TimeSpan interval = nowDateTime - dateTimeItem;
-                 
+
                 if ((int)(interval.TotalDays) <= d)
                 {
                     resultInfo.totalLogs += 1;
@@ -93,18 +93,13 @@ namespace RapidTranslationWPF_MVVM.ViewModels
             return resultInfo;
         }
 
-        public class ItemChart
+        public List<ItemChart> getNumVocabPerDay()
         {
-            public string days { get; set; } 
-            public int numVocab { get; set; }  
-        }
-        private List<ItemChart> getNumVocabPerDay()
-        { 
             List<ItemLog> itemLogs = dataGobalVariable.SourceItemLog;
             DateTime nowDateTime = DateTime.Now;
 
-            List<int> flags = new List<int>(31);
-            List<ItemChart> itemChart = new List<ItemChart>(); 
+            List<int> flags = new List<int>(Enumerable.Repeat(0, 31).ToArray());
+            List<ItemChart> itemChart = new List<ItemChart>();
 
             foreach (var itemLog in itemLogs)
             {
@@ -115,12 +110,17 @@ namespace RapidTranslationWPF_MVVM.ViewModels
                     flags[interval.Days] += 1;
             }
 
-            for(int i = 1; i <= 30; ++i)
+            for (int i = 1; i <= 30; ++i)
             {
-                itemChart.Add(new ItemChart() { days = i.ToString(), numVocab = flags[i] });;
+                itemChart.Add(new ItemChart() { days = i.ToString(), numVocab = flags[i] }); ;
             }
 
             return itemChart;
+        }
+
+        public List<ItemChart> GetNumVocabPerDay
+        {
+            get { return getNumVocabPerDay(); }
         }
     }
 }
