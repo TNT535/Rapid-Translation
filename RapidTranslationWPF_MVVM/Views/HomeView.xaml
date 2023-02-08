@@ -14,8 +14,39 @@
 
     <Grid>
         <StackPanel>
-            <TextBlock Text="Home Windows have context:" />
-            <TextBox Text="{Binding HomeString}" />
+            <TextBlock Text="Translation"/>
+            
+            <TextBox Text="{Binding HomeString, Mode=TwoWay}">
+                <TextBox.InputBindings>
+                    <KeyBinding Key="Enter" Command="{Binding SearchVocabularyCommand}" />
+                </TextBox.InputBindings>
+                <TextBox.BorderBrush>#0F9D58 </TextBox.BorderBrush>
+                <TextBox.BorderThickness> 1 </TextBox.BorderThickness>
+                <TextBox.Margin> 10 10 10 10</TextBox.Margin>
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="3"/>
+                    </Style>
+                </TextBox.Resources>
+            </TextBox> 
+             
+            <Button Width="100" Margin="20" Command="{Binding SearchVocabularyCommand}">
+                <Button.Content> Search </Button.Content>
+                <Button.BorderBrush>#0F9D58</Button.BorderBrush>
+                <Button.Background>White</Button.Background>
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="3"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+
+            <TextBlock Text="Your last vocabulary:"/>
+            <Border CornerRadius="3.2" BorderBrush="#0F9D58" Visibility="{Binding isVocabFound}">
+                <Border.BorderThickness>1.2 1.2 1.2 1.2</Border.BorderThickness>  
+                <Border.Margin>6</Border.Margin> 
+                <TextBlock Text="{Binding ResultSearchVocab, Mode=OneWay}" /> 
+            </Border>
         </StackPanel>
 
     </Grid>

@@ -4,9 +4,68 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:RapidTranslationWPF_MVVM.Views"
+             xmlns:vm="clr-namespace:RapidTranslationWPF_MVVM.ViewModels"
              mc:Ignorable="d" 
              d:DesignHeight="632" d:DesignWidth="895">
+    <UserControl.DataContext>
+        <vm:HistoryViewModel/>
+    </UserControl.DataContext>
     <Grid>
-            
+        <ScrollViewer>
+            <StackPanel Background="#F0F0F0">
+                <ItemsControl ItemsSource="{Binding ListWordHistoryObj.ListWordHistorys}" >
+
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <!--<WrapPanel/>-->
+                            <StackPanel />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Border Margin="8" BorderBrush="#0F9D58" BorderThickness="1" CornerRadius="20" >
+                                <!--<Button x:Name="button" BorderBrush="Transparent" Padding="12 4 12 4" Grid.Column="0" Background="#F0F0F0" HorizontalContentAlignment="Stretch" Command="{Binding RelativeSource={RelativeSource AncestorType=UserControl}, Path=DataContext.GetFullInformationCommand}">-->
+                                <Grid Margin="10">
+
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="*" ></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Button Grid.Column="0" Background="#F0F0F0" BorderThickness="0" Margin="20" Command="{Binding PlaySoundCommand}" CommandParameter="{Binding Word}">
+                                        <Button.Content>
+                                            <Polygon Points="0,0 32,20, 0,40" Fill="Green" Height="40" Width="32" RenderTransformOrigin="0.544,0.492" />
+                                        </Button.Content>
+                                    </Button>
+
+                                    <Button x:Name="btnMean" Grid.Column="1" Padding="10" HorizontalContentAlignment="Left"   Background="Transparent" BorderBrush="Transparent" Command="{Binding RelativeSource={RelativeSource AncestorType=UserControl}, Path=DataContext.GetFullInfomationCommand}">
+                                        <Button.Content>
+                                            <Grid  Margin="10">
+                                                <StackPanel HorizontalAlignment="Stretch" Width="Auto">
+
+                                                    <TextBlock Margin="0" Padding="0" Text="{Binding Word}" FontSize="24" TextWrapping="Wrap" HorizontalAlignment="Stretch"></TextBlock>
+                                                    <Line X1="0" Y1="0"    X2="200" Y2="0"    Stroke="#0F9D58"    StrokeThickness="4" HorizontalAlignment="Stretch" />
+                                                    <TextBlock Margin="0" Padding="0" Text="{Binding Mean}" FontSize="24" TextWrapping="Wrap" HorizontalAlignment="Stretch"></TextBlock>
+
+                                                </StackPanel>
+                                            </Grid>
+                                        </Button.Content>
+                                    </Button>
+                                </Grid>
+
+                                <!--<Button.Resources>
+                                        <Style TargetType="{x:Type Border}">
+                                            <Setter Property="CornerRadius" Value="20"></Setter>
+                                        </Style>
+                                    </Button.Resources>-->
+                                <!--</Button>-->
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+
+                </ItemsControl>
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </UserControl>

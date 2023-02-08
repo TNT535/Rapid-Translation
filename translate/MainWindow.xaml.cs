@@ -26,14 +26,6 @@ namespace translate
         {
             InitializeComponent();
         }
-        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            // Add your code here to handle the window closing event.
-        }
-        private void SettingClick(object sender, RoutedEventArgs e)
-        {
-            // Add your code here to handle the SettingClick event.
-        }
 
 
         private async void translate_Click(object sender, RoutedEventArgs e)
@@ -45,47 +37,31 @@ namespace translate
 
             output.Text = translatedText;
         }
+
+        
         private async Task<string> TranslateText(string inputText, string before, string after)
         {
             string url;
             if (before == "Auto")
             {
                 if(after == "Vietnamese")
-                {
                     url = $"https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=vi&dt=t&q={inputText}\r\n";
-
-                }
                 else
-                {
                     url = $"https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=en&dt=t&q={inputText}\r\n";
-
-                }
             }
             else if(before == "English")
             {
                 if (after == "Vietnamese")
-                {
                     url = $"https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=vi&dt=t&q={inputText}\r\n";
-
-                }
                 else
-                {
                     url = $"https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=en&dt=t&q={inputText}\r\n";
-
-                }
             }
             else
             {
                 if (after == "Vietnamese")
-                {
                     url = $"https://translate.googleapis.com/translate_a/single?client=gtx&sl=vi&tl=vi&dt=t&q={inputText}\r\n";
-
-                }
                 else
-                {
                     url = $"https://translate.googleapis.com/translate_a/single?client=gtx&sl=vi&tl=en&dt=t&q={inputText}\r\n";
-
-                }
             }
             
             string translatedText = "";
@@ -98,15 +74,6 @@ namespace translate
                 translatedText = translatedArray[1];
             }
             return translatedText;
-        }
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void input_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
         }
     }
 }
