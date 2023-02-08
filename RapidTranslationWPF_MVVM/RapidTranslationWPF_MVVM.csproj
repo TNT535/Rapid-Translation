@@ -9,12 +9,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Data\logFile.xml" />
     <None Remove="Data\vocab.0.4.json" />
     <None Remove="Image\Test_Img_RT_Application.png" />
     <None Remove="UserData\dataFile.xml" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Data\logFile.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Data\vocab.0.4.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -35,6 +39,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="DotNetProjects.WpfToolkit.DataVisualization" Version="6.1.94" />
     <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.1418.22" />
     <PackageReference Include="System.Speech" Version="7.0.0" />
   </ItemGroup>

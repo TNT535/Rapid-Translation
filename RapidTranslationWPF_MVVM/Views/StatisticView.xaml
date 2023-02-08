@@ -3,8 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:DVC="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=DotNetProjects.DataVisualization.Toolkit"
              xmlns:local="clr-namespace:RapidTranslationWPF_MVVM.Views"
-             xmlns:vm="clr-namespace:RapidTranslationWPF_MVVM.ViewModels"
+             xmlns:vm="clr-namespace:RapidTranslationWPF_MVVM.ViewModels" 
+             xmlns:DV="clr-namespace:System.Windows.Controls.DataVisualization;assembly=DotNetProjects.DataVisualization.Toolkit"
              mc:Ignorable="d" 
              d:DesignHeight="632" d:DesignWidth="895">
 
@@ -14,8 +16,138 @@
 
     <Grid>
         <StackPanel>
-            <TextBlock Text="Statistic Windows have context:" />
-            <TextBox Text="{Binding StatisticString}" />
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Border Grid.Column="0" CornerRadius="3.2" BorderBrush="#0F9D58" HorizontalAlignment="Left">
+                    <Border.BorderThickness>1.2 1.2 1.2 1.2</Border.BorderThickness>
+                    <Border.Margin>6</Border.Margin>
+                    <Border.Width>280</Border.Width>
+                    <Border.Height>100</Border.Height>
+                    
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <Border Grid.Column="0" CornerRadius="180" BorderBrush="#0F9D58" Width="70" Height="70" HorizontalAlignment="Left">
+                            <Border.BorderThickness>1.2 1.2 1.2 1.2</Border.BorderThickness>
+                            <Border.Margin>6</Border.Margin>
+                            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18">
+                                <TextBlock Text="{Binding TotalVocab1Day, Mode=OneWay}">
+                                    <TextBlock.FontSize>18</TextBlock.FontSize>
+                                </TextBlock>
+                            </TextBlock>
+                        </Border>
+
+                        <Grid Grid.ColumnSpan="2" Margin="101,0,0,0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                            </Grid.RowDefinitions>
+
+                            <TextBlock Grid.Row="0" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Center"> 
+                                1 Day ago
+                            </TextBlock>
+
+                            <TextBlock Grid.Row="1" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Center"> 
+                                <TextBlock Text="{Binding Last1DayStored, Mode=OneWay}">
+                                    <TextBlock.FontSize>18</TextBlock.FontSize>
+                                </TextBlock>
+                            </TextBlock>
+                        </Grid>
+                    </Grid>
+                </Border>
+
+                <Border Grid.Column="1" CornerRadius="3.2" BorderBrush="#0F9D58" HorizontalAlignment="Center">
+                    <Border.BorderThickness>1.2 1.2 1.2 1.2</Border.BorderThickness>
+                    <Border.Margin>6</Border.Margin>
+                    <Border.Width>280</Border.Width>
+                    <Border.Height>100</Border.Height>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <Border Grid.Column="0" CornerRadius="180" BorderBrush="#0F9D58" Width="70" Height="70" HorizontalAlignment="Left">
+                            <Border.BorderThickness>1.2 1.2 1.2 1.2</Border.BorderThickness>
+                            <Border.Margin>6</Border.Margin>
+                            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18">
+                                <TextBlock Text="{Binding TotalVocab7Day, Mode=OneWay}">
+                                    <TextBlock.FontSize>18</TextBlock.FontSize>
+                                </TextBlock>
+                            </TextBlock>
+                        </Border>
+
+                        <Grid Grid.ColumnSpan="2" Margin="101,0,0,0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                            </Grid.RowDefinitions>
+
+                            <TextBlock Grid.Row="0" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Center"> 
+                                7 Days ago
+                            </TextBlock>
+
+                            <TextBlock Grid.Row="1" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Center"> 
+                                <TextBlock Text="{Binding Last7DayStored, Mode=OneWay}">
+                                    <TextBlock.FontSize>16</TextBlock.FontSize>
+                                </TextBlock>
+                            </TextBlock>
+                        </Grid>
+                    </Grid>
+                </Border>
+
+                <Border Grid.Column="2" CornerRadius="3.2" BorderBrush="#0F9D58" HorizontalAlignment="Right">
+                    <Border.BorderThickness>1.2 1.2 1.2 1.2</Border.BorderThickness>
+                    <Border.Margin>6</Border.Margin>
+                    <Border.Width>280</Border.Width>
+                    <Border.Height>100</Border.Height>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <Border Grid.Column="0" CornerRadius="180" BorderBrush="#0F9D58" Width="70" Height="70" HorizontalAlignment="Left">
+                            <Border.BorderThickness>1.2 1.2 1.2 1.2</Border.BorderThickness>
+                            <Border.Margin>6</Border.Margin>
+                            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18">
+                                <TextBlock Text="{Binding TotalVocab30Day, Mode=OneWay}">
+                                    <TextBlock.FontSize>16</TextBlock.FontSize>
+                                </TextBlock>
+                            </TextBlock>
+                        </Border>
+
+                        <Grid Grid.ColumnSpan="2" Margin="101,0,0,0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                            </Grid.RowDefinitions>
+
+                            <TextBlock Grid.Row="0" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Center"> 
+                                30 Days ago
+                            </TextBlock>
+
+                            <TextBlock Grid.Row="1" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Center"> 
+                                <TextBlock Text="{Binding Last30DayStored, Mode=OneWay}">
+                                    <TextBlock.FontSize>16</TextBlock.FontSize>
+                                </TextBlock>
+                            </TextBlock>
+                        </Grid>
+                    </Grid>
+                </Border> 
+            </Grid>
+
+             
         </StackPanel>
 
     </Grid>

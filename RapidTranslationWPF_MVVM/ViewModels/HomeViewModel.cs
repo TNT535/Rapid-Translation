@@ -9,6 +9,7 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Documents;
 using System.Windows.Input;
+using static RapidTranslationWPF_MVVM.Models.DataGobalVariable;
 
 namespace RapidTranslationWPF_MVVM.ViewModels
 {
@@ -28,47 +29,56 @@ namespace RapidTranslationWPF_MVVM.ViewModels
             set { _ResultSearchVocab = value; OnPropertyChanged(); }
         }
 
+        private bool isVocabFound = true;
+        public DataGobalVariable dataGobalVariable = new DataGobalVariable();
+
         public HomeViewModel()
         {
             _exampleModel = new ExampleModel();
-            HomeString = "home user control window";
-            ResultSearchVocab = "";
-            SearchVocabularyCommand = new RelayCommand(SearchVocabulary);
+            HomeString = "";
+            getPreviousVocab();
+            SearchVocabularyCommand = new RelayCommand(SearchVocabulary); 
         }
 
         public ICommand SearchVocabularyCommand { get; set; }
-
-        private void SearchVocabulary(object obj)
+        private void setResultSearchVocab(ItemVocab itemVocab, bool update)
         {
-            string json_path_file = "Data/vocab.0.4.json";
-            List<ItemVocab> source = new List<ItemVocab>();
-
-            using (StreamReader r = new StreamReader(json_path_file))
+            if (itemVocab == null)
             {
-                string json_file_vocab = r.ReadToEnd();
-                source = JsonSerializer.Deserialize<List<ItemVocab>>(json_file_vocab);
+                ResultSearchVocab = "Không tìm thấy từ vựng";
+                return;
+            }
+            ResultSearchVocab = "";
+            ResultSearchVocab += "Từ vựng: " + itemVocab.Vocabulary + '\n';
+            ResultSearchVocab += "Phiên âm: " + itemVocab.Phonetic + '\n';
+            ResultSearchVocab += "Chi tiết: " + itemVocab.Details;
 
-                var item = source.Find(x => x.Vocabulary == HomeString);
-                if (item == null)
-                {
-                    ResultSearchVocab = "Không tìm thấy từ vựng"; 
-                }
-                else
-                { 
-                    ResultSearchVocab = "";
-                    ResultSearchVocab += "Từ vựng: " + item.Vocabulary + '\n';
-                    ResultSearchVocab += "Phiên âm: " + item.Phonetic + '\n';
-                    ResultSearchVocab += "Chi tiết: " + item.Details + '\n';
-                }
-
+            if (update == true)
+            {
+                dataGobalVariable.SourceItemLog.Add(new ItemLog() { 
+                    LogVocab = itemVocab.Vocabulary,
+                    LogDateTime = DateTime.Now
+                });
+                dataGobalVariable.saveLogs();
             }
         }
-    }
+        private void getPreviousVocab()
+        {
+            var lastVocab = dataGobalVariable.SourceItemLog.Last();
 
-    public class ItemVocab
-    {
-        public string Vocabulary { get; set; }
-        public string Phonetic { get; set; }
-        public string Details { get; set; } 
+            if (lastVocab == null)
+                ResultSearchVocab = "Bạn chưa tìm kiếm từ vựng nào.";
+
+            if (lastVocab != null)
+            {
+                var itemFromItemVocab = dataGobalVariable.SourceItemVocab.Find(x => x.Vocabulary == lastVocab.LogVocab);
+                setResultSearchVocab(itemFromItemVocab, false);
+            }
+        }
+        private void SearchVocabulary(object obj)
+        {  
+            var item = dataGobalVariable.SourceItemVocab.Find(x => x.Vocabulary == HomeString);
+            setResultSearchVocab(item, true);
+        }
     }
 }
