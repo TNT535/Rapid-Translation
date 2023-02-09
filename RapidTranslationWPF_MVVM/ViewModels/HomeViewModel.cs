@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Speech.Synthesis;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -38,6 +39,8 @@ namespace RapidTranslationWPF_MVVM.ViewModels
             HomeString = "";
             getPreviousVocab();
             SearchVocabularyCommand = new RelayCommand(SearchVocabulary); 
+            PlaySoundCommand = new RelayCommand(PlaySound);
+
         }
 
         public ICommand SearchVocabularyCommand { get; set; }
@@ -80,5 +83,20 @@ namespace RapidTranslationWPF_MVVM.ViewModels
             var item = dataGobalVariable.SourceItemVocab.Find(x => x.Vocabulary == HomeString);
             setResultSearchVocab(item, true);
         }
+
+        public ICommand PlaySoundCommand { get; set; }
+
+        private void PlaySound(object obj)
+        {
+            if (obj is string)
+            {
+                string word = obj as string;
+                SpeechSynthesizer ss = new SpeechSynthesizer();
+                ss.Speak(word);
+            }
+        }
+
+        
+
     }
 }

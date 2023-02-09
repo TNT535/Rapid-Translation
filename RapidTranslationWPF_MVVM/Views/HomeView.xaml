@@ -46,8 +46,16 @@
                 <Border CornerRadius="3.2" BorderBrush="#0F9D58" Visibility="{Binding isVocabFound}">
                     <Border.BorderThickness>1.2 1.2 1.2 1.2</Border.BorderThickness>
                     <Border.Margin>6</Border.Margin>
-
+                    <StackPanel>
+                        <Button Grid.Column="0" Background="White" Width="40" Height="40" HorizontalAlignment="Left" BorderThickness="0" Margin="4" Visibility="{Binding isVocabFound}" Command="{Binding RelativeSource={RelativeSource AncestorType=UserControl}, Path=DataContext.PlaySoundCommand }" CommandParameter="{Binding HomeString}">
+                            <Button.Content>
+                                <Polygon Points="0,0 32,20, 0,40" Fill="Green" Height="40" Width="32" RenderTransformOrigin="0.544,0.492" />
+                            </Button.Content>
+                        </Button>
+                            
                         <TextBlock Text="{Binding ResultSearchVocab, Mode=OneWay}" />
+
+                    </StackPanel>
                 </Border>
             </StackPanel>
 
