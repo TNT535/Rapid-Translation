@@ -53,7 +53,7 @@
                             </Button.Content>
                         </Button>
                             
-                        <TextBlock Text="{Binding ResultSearchVocab, Mode=OneWay}" />
+                        <TextBlock Padding="5" Text="{Binding ResultSearchVocab, Mode=OneWay}" />
 
                     </StackPanel>
                 </Border>

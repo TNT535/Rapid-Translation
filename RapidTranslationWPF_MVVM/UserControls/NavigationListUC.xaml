@@ -62,7 +62,7 @@
                 </Button>
             </Border>
 
-            <Border Width="250" Height="50" BorderBrush="#0F9D58" BorderThickness="1" CornerRadius="25" Margin="10 10 0 10">
+            <!--<Border Width="250" Height="50" BorderBrush="#0F9D58" BorderThickness="1" CornerRadius="25" Margin="10 10 0 10">
                 <Button BorderBrush="Transparent" Background="#FFFFFF" HorizontalContentAlignment="Left" Padding="20 0 0 0" Command="{Binding VocabularyCommand}">
                     <TextBlock Text="Vocabulary" FontSize="18" TextWrapping="Wrap" Foreground="#666666">
                     </TextBlock>
@@ -72,7 +72,7 @@
                         </Style>
                     </Button.Resources>
                 </Button>
-            </Border>
+            </Border>-->
 
             <Border Width="250" Height="50" BorderBrush="#0F9D58" BorderThickness="1" CornerRadius="25" Margin="10 10 0 10">
                 <Button BorderBrush="Transparent" Background="#FFFFFF" HorizontalContentAlignment="Left" Padding="20 0 0 0" Command="{Binding TranslateSentenceCommand}">

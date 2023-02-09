@@ -3,6 +3,7 @@ using RapidTranslationWPF_MVVM.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Speech.Synthesis;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -19,13 +20,15 @@ namespace RapidTranslationWPF_MVVM.ViewModels
             set { _ResultSearchVocab = value; OnPropertyChanged(); }
         }
 
-        private bool isVocabFound = true;
+        public bool isVocabFound = true;
         public DataGobalVariable dataGobalVariable = new DataGobalVariable();
 
         public SearchWordCaptureViewModel()
         {
             getPreviousVocab();
             SearchVocabularyCommand = new RelayCommand(SearchVocabulary);
+            PlaySoundCommand = new RelayCommand(PlaySound);
+            SearchVocabulary(null);
         }
 
         public ICommand SearchVocabularyCommand { get; set; }
@@ -75,6 +78,18 @@ namespace RapidTranslationWPF_MVVM.ViewModels
         {
             get { return _captureObject; }
             set { _captureObject = value; OnPropertyChanged(); }
+        }
+
+        public ICommand PlaySoundCommand { get; set; }
+
+        private void PlaySound(object obj)
+        {
+            //if (obj is string)
+            {
+                string word = CaptureObject.WordInfoRightClick.Word as string;
+                SpeechSynthesizer ss = new SpeechSynthesizer();
+                ss.Speak(word);
+            }
         }
 
     }

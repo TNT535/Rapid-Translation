@@ -30,7 +30,7 @@ namespace RapidTranslationWPF_MVVM.ViewModels
             set { _ResultSearchVocab = value; OnPropertyChanged(); }
         }
 
-        private bool isVocabFound = true;
+        public bool isVocabFound = true;
         public DataGobalVariable dataGobalVariable = new DataGobalVariable();
 
         public HomeViewModel()
